@@ -8,6 +8,7 @@ import { SideMenuComponent } from './side-menu.component';
   declarations: [SideMenuComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [SideMenuComponent]
 })
 export class SideMenuModule { }

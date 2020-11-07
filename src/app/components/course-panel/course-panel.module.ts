@@ -8,6 +8,7 @@ import { CoursePanelComponent } from './course-panel.component';
   declarations: [CoursePanelComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CoursePanelComponent],
 })
 export class CoursePanelModule { }

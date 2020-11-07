@@ -8,6 +8,7 @@ import { LessonPanelComponent } from './lesson-panel.component';
   declarations: [LessonPanelComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [LessonPanelComponent],
 })
 export class LessonPanelModule { }
