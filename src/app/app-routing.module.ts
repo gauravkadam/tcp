@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/my-courses',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
