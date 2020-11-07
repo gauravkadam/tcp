@@ -12,7 +12,7 @@ import { SideMenuModule } from './components/side-menu/side-menu.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SideMenuModule
+    SideMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
