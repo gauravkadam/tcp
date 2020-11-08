@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyCoursesComponent } from './my-courses.component';
+import { SettingsComponent } from './settings.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
-import { ActivitiesModule } from 'src/app/components/activities/activities.module';
 
 
 const routes: Routes = [
-  { path: '', component: MyCoursesComponent }
+  { path: '', component: SettingsComponent }
 ]
+
+
+
 @NgModule({
-  declarations: [MyCoursesComponent],
+  declarations: [SettingsComponent],
   imports: [
     CommonModule,
     SideMenuModule,
-    ActivitiesModule,
     RouterModule.forChild(routes),
-  ]
+  ],
+  exports: []
 })
-export class MyCoursesModule { }
+export class SettingsModule { }
