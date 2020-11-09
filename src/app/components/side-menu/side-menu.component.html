@@ -1,5 +1,31 @@
-<ul>
-    <li routerLink="/my-courses">My cources</li>
-    <li routerLink="/my-students">my students</li>
-</ul>
-<ng-content></ng-content>
+<div class="container">
+    <ul>
+        <li>
+            <div class="profile"><img src="../../../assets/icons/user.png" width="90">
+                <div>Jason Hunt</div>
+                <div class="role">Teacher</div>
+            </div>
+        </li>
+        <li routerLink="/home" routerLinkActive="active">
+            <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+            <label>Home</label></li>
+        <li routerLink="/my-courses" routerLinkActive="active"><img src="../../../assets/icons/courses.svg" width="25"
+                alt="Courses"><label>My Courses</label> </li>
+        <!-- <li routerLink="/my-achivements" routerLinkActive="active"><img src="../../../assets/icons/achivement.svg" width="25" alt="Achivements"><label>My Achivements</label></li> -->
+        <li routerLink="/my-students" routerLinkActive="active"><img src="../../../assets/icons/students.svg" width="25"
+                alt="My Students"> <label>My Students</label></li>
+        <li routerLink="/forum" routerLinkActive="active"><img src="../../../assets/icons/forum.svg" width="25"
+                alt="Forum">
+            <label>Forum</label></li>
+        <li routerLink="/videos" routerLinkActive="active"><img src="../../../assets/icons/videos.svg" width="25"
+                alt="Videos"><label>Videos</label></li>
+        <li routerLink="/course-catalog" routerLinkActive="active"><img src="../../../assets/icons/catalog.svg"
+                width="25" alt=""><label>Course Catalog</label></li>
+        <li class="settings" routerLink="/settings" routerLinkActive="active"><img
+                src="../../../assets/icons/settings.svg" width="25" alt="Settings"><label>Settings</label></li>
+        <li class="logout" routerLink="/logout" routerLinkActive="active"><img src="../../../assets/icons/log-out.svg"
+                width="25" alt="Logout"><label>Logout</label></li>
+    </ul>
+
+    <ng-content></ng-content>
+</div>
