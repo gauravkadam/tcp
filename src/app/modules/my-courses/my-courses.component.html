@@ -1,5 +1,15 @@
 <app-side-menu>
     <div class="container">
-        <app-activities></app-activities>
+        <app-activities [activityInput]="activityData"></app-activities>
+        <p class="text-small margin-top-35">
+                <span><span class="dot"></span>ONGOING COURSES</span>
+                <span class="margin-20 left right"><span class="dot"></span>UNPUBLISHED COURSES</span>
+                <span><span class="dot"></span>COMPLETED COURSES</span>
+        </p>
+        <div class="course-grid">
+            <app-course-card></app-course-card>
+            <app-course-card></app-course-card>
+            <app-course-card [createCourse]="true"></app-course-card>
+        </div>
     </div>
 </app-side-menu>
