@@ -1,28 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-my-courses',
   templateUrl: './my-courses.component.html',
   styleUrls: ['./my-courses.component.scss']
 })
-export class MyCoursesComponent implements OnInit {
+export class MyCoursesComponent {
 
-  public activityData = {
-    time: '4PM - 5PM',
-    when: 'Today',
-    class: 'FlexBox',
-    course: 'WEB DEVELOPMENT FOR BEGINNERS',
-    lesson: {
-        lessonNo: 'Lesson 1',
-        task: 'task 5',
-        points: '30 Points',
-    },
-    timeLeftToBegin: '45 min'
-};
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private sharedService: SharedService) { }
 
 }
