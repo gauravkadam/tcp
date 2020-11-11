@@ -15,6 +15,6 @@ export class DuplicateCoursePanelComponent implements OnInit {
   }
   public onCreateCourse(data){
     this.sharedService.setSideMenuCollapse(true);
-    this.router.navigate(['/home'])
+    this.router.navigate(['/my-courses/add-course'])
   }
 }
