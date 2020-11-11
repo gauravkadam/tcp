@@ -9,6 +9,28 @@
         padding: 20px;
         height: 100vh;
 
+        &.collapse{
+            width: 50px;
+
+            li{
+                display: block;
+                text-align: right;
+
+
+                div {
+                    &.profile{
+                      left: 60%;
+
+                        img{
+                            border: none;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
         li {
             color: #0869B6;
             display: flex;

@@ -1,5 +1,5 @@
 <div class="container">
-        <ul>
+        <ul *ngIf="!isCollapse">
                 <li>
                         <div class="profile"><img src="../../../assets/icons/user.png" width="90">
                                 <div>Jason Hunt</div>
@@ -11,7 +11,7 @@
                         <label>Home</label></li>
                 <li routerLink="/my-courses" routerLinkActive="active"><img src="../../../assets/icons/courses.svg"
                                 width="25" alt="Courses"><label>My Courses</label> </li>
-                <!-- <li routerLink="/my-achivements" routerLinkActive="active"><img src="../../../assets/icons/achivement.svg" width="25" alt="Achivements"><label>My Achivements</label></li> -->
+
                 <li routerLink="/my-students" routerLinkActive="active"><img src="../../../assets/icons/students.svg"
                                 width="25" alt="My Students"> <label>My Students</label></li>
                 <li routerLink="/forum" routerLinkActive="active"><img src="../../../assets/icons/forum.svg" width="25"
@@ -26,6 +26,32 @@
                                 alt="Settings"><label>Settings</label></li>
                 <li class="logout" routerLink="/logout" routerLinkActive="active"><img
                                 src="../../../assets/icons/log-out.svg" width="25" alt="Logout"><label>Logout</label>
+                </li>
+        </ul>
+        <ul class="collapse" *ngIf="isCollapse">
+                <li>
+                        <div class="profile"><img src="../../../assets/icons/user.png" width="40">
+                        </div>
+                </li>
+                <li routerLink="/home" routerLinkActive="active">
+                        <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+
+                <li routerLink="/my-courses" routerLinkActive="active"><img src="../../../assets/icons/courses.svg"
+                                width="25" alt="Courses"></li>
+
+                <li routerLink="/my-students" routerLinkActive="active"><img src="../../../assets/icons/students.svg"
+                                width="25" alt="My Students"> </li>
+                <li routerLink="/forum" routerLinkActive="active"><img src="../../../assets/icons/forum.svg" width="25"
+                                alt="Forum">
+                </li>
+                <li routerLink="/videos" routerLinkActive="active"><img src="../../../assets/icons/videos.svg"
+                                width="25" alt="Videos"></li>
+                <li routerLink="/course-catalog" routerLinkActive="active"><img src="../../../assets/icons/catalog.svg"
+                                width="25" alt=""></li>
+                <li routerLink="/settings" routerLinkActive="active"><img src="../../../assets/icons/settings.svg"
+                                width="25" alt="Settings"></li>
+                <li routerLink="/logout" routerLinkActive="active"><img src="../../../assets/icons/log-out.svg"
+                                width="25" alt="Logout">
                 </li>
         </ul>
         <app-header></app-header>

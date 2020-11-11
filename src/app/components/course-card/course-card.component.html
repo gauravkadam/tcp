@@ -3,15 +3,15 @@
         <img src="../../../assets//icons/course.png" width="100" alt="">
     <div class="text-small">Web-development for beginner</div>
     <div class="user-name">Json hunt</div>
-    <ul>
+    <ul class="font-10">
         <li>03 Lessons</li>
         <li>18 Tasks</li>
         <li>Beginner Level</li>
     </ul>
-    <div class="text-xxsmall alignment">
+    <div class="text-xxsmall alignment font-10">
         <span>64% Completed</span><span>32 days left</span>
     </div>
-    <div class="text-xxsmall dates alignment margin-10 top">
+    <div class="text-xxsmall dates alignment margin-10 top font-10">
         <span>Start: 08/01/2020</span><span>End: 08/02/2020</span>
     </div>
     <div class="text-xxsmall alignment margin-20 top">
@@ -20,6 +20,6 @@
     </ng-container>
     <div *ngIf="createCourse" class="create-course">
         <div class="text-small">New ideas coming up?</div>
-        <div class="nav-button">CREATE A COURSE <li class="icon-forward-arrow"></li></div>
+        <div class="nav-button" (click)="onCreate()">CREATE A COURSE <li class="icon-forward-arrow"></li></div>
     </div>
 </div>

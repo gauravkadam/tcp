@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-duplicate-course-panel',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DuplicateCoursePanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedService:SharedService, private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  public onCreateCourse(data){
+    this.sharedService.setSideMenuCollapse(true);
+    this.router.navigate(['/home'])
+  }
 }
