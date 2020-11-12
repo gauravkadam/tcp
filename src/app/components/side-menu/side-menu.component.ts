@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  public isCollapse: boolean;
+
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
+    this.sharedService.getSideMenuCollapse()
+    .subscribe(res => this.isCollapse = res);
   }
 
 }

@@ -1,0 +1,10 @@
+<div class="container">
+    <h3>Great, how you would like to create this new course?</h3>
+    <h3 class="desc">You can duplicate an existing course and adjust your needs, or create a course from scratch.</h3>
+    <div class="course-grid">
+        <app-course-card></app-course-card>
+        <app-course-card></app-course-card>
+        <app-course-card></app-course-card>
+        <app-course-card [createCourse]="true" (onCreateCourse)="onCreateCourse($event)"></app-course-card>
+    </div>
+</div>
