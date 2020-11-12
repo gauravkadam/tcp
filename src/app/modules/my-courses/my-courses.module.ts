@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AddLessonComponent } from './add-lesson/add-lesson.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { MyCourseListComponent } from './my-course-list/my-course-list.component';
+
 
 
 const routes: Routes = [
@@ -20,12 +22,13 @@ const routes: Routes = [
       { path: 'add-course', component: AddCourseComponent },
       { path: 'add-lesson', component: AddLessonComponent },
       { path: 'add-task', component: AddTaskComponent },
+      { path: 'mycourses-list', component: MyCourseListComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
 ]
 @NgModule({
-  declarations: [MyCoursesComponent, DuplicateCoursePanelComponent, DashboardComponent, AddCourseComponent, AddLessonComponent, AddTaskComponent],
+  declarations: [MyCoursesComponent, DuplicateCoursePanelComponent, DashboardComponent, AddCourseComponent, AddLessonComponent, AddTaskComponent, MyCourseListComponent],
   imports: [
     CommonModule,
     SideMenuModule,
