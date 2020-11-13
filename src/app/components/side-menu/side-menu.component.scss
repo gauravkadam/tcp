@@ -1,6 +1,10 @@
 .container {
     display: flex;
 
+    div {
+        flex-grow: 2;
+    }
+
     ul {
         list-style: none;
         box-shadow: 4px 0px 8px #2D343614;
