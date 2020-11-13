@@ -1,6 +1,29 @@
 <div class="container">
     <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label class="margin-5 left"> MY COURSES</label></div>
-    <button routerLink="/my-courses/add-lesson">Add a Lesson</button>
+    <div class="my-courses">
+        <div class="h3-text status">
+            <div class="flex"><h3>Web Development for beginners</h3><h3 class="margin-10 left gray">Fall 2020</h3></div>
+            <div class="author"><img src="../../../../assets/icons/user.png" alt="user" width="20"> <span class="margin-10 left">Json Hunt</span></div>
+            <p class="text-small margin-top-35">
+                <span><span class="dot"></span>0 Lessons</span>
+                <span class="margin-20 left right"><span class="dot"></span>0 Tasks</span>
+                <span><span class="dot"></span>Beginner Level</span>
+        </p>
+        </div>
+        <div class="h3-text course-img">
+            <img src="../../../../assets/icons/course.png" alt="">
+            <div class="alignment font-10 margin-20 top">
+                <span>64% Completed</span><span>32 days left</span>
+            </div>
+            <progress id="file" value="32" max="100"> 32% </progress>
+            <div class="alignment font-10 opac">
+                <span>Start: 01/02/2020</span><span>End: 01/02/2020</span>
+            </div>
+        </div>
+    </div>
+    <img class="img-idea" src="../../../../assets/icons/idea.png" alt="" width="70">
+    <div class="margin-20 top"><h3 class="text-center">Great job, now you need to add your first lesson</h3></div>
+    <div class="add-lesson text-center">     <button routerLink="/my-courses/add-lesson">+</button><div>Add a Lesson</div></div>
 </div>
 
 
