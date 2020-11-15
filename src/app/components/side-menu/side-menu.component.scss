@@ -1,4 +1,4 @@
-.container {
+.menu-container {
     display: flex;
 
     div {
@@ -13,8 +13,8 @@
         padding: 20px;
         height: 100vh;
 
-        &.collapse{
-            width: 50px;
+        &.collapse-menu {
+            width: 100px;
 
             li{
                 display: block;
@@ -95,5 +95,33 @@
                 }
             }
         }
+
+        &.add-task {
+            margin-top: -20px;
+
+            .lession-name{
+                display: flex;
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            li{
+                border-bottom: 1px solid lightgray;
+                padding: 5px;
+            }
+
+            .tasks{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .task-menu {
+        box-shadow: 4px 0px 8px #2D343614;
+        width: 200px;
+        margin: 0;
+        padding: 20px;
+        height: 100vh;
     }
 }

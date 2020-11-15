@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
@@ -9,12 +10,22 @@ import { SharedService } from 'src/app/services/shared.service';
 export class SideMenuComponent implements OnInit {
 
   public isCollapse: boolean;
+  public addTask: boolean;
 
-  constructor(private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sharedService.getSideMenuCollapse()
-    .subscribe(res => this.isCollapse = res);
+    .subscribe(res => {
+      this.isCollapse = res
+    });
+
+    this.route.queryParams.subscribe(res => {
+      this.addTask = res.addTask;
+     if(!location.pathname.match('dashboard')){
+       this.isCollapse = true;
+     }
+    });
   }
 
 }
