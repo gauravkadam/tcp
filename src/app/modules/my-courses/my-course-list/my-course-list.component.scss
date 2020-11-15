@@ -1,0 +1,93 @@
+.container {
+    padding: 20px 50px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    width: 75%;
+    margin: 50px;
+
+    .my-courses {
+        box-shadow: 4px 0px 8px #2D343614;
+        border-left: 4px solid #D2EDFB;
+        padding: 15px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+
+        .h3-text {
+            // display: inline-block;
+
+            .gray {
+                opacity: .3;
+            }
+
+            .author {
+                font-size: small;
+                font-weight: 200;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .dot {
+                height: 5px;
+                width: 5px;
+                background-color: #00B794;
+                border-radius: 50%;
+                margin-right: 5px;
+                display: inline-block;
+            }
+
+            .text-small {
+                font-size: x-small;
+                font-weight: 200;
+            }
+
+            .alignment {
+                display: flex;
+                justify-content: space-between;
+                font-size: x-small;
+
+                &.opac {
+                    opacity: .4;
+                }
+            }
+
+            &.status {
+                flex-grow: 0.6;
+            }
+
+            &.course-img {
+                width: 30%;
+
+                img {
+                    display: block;
+                    margin: auto;
+                }
+
+                progress {
+                    width: 100%;
+                }
+
+            }
+
+        }
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .img-idea {
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .add-lesson{
+            box-shadow: 4px 0px 8px #2D343614;
+            font-size: x-small;
+            margin-top: 30px;
+            padding: 40px;
+    }
+}

@@ -1,0 +1,1 @@
+export { ActivitiesModule } from './activities/activities.module';

@@ -1,5 +1,9 @@
-.container {
+.menu-container {
     display: flex;
+
+    div {
+        flex-grow: 2;
+    }
 
     ul {
         list-style: none;
@@ -8,6 +12,28 @@
         margin: 0;
         padding: 20px;
         height: 100vh;
+
+        &.collapse-menu {
+            width: 100px;
+
+            li{
+                display: block;
+                text-align: right;
+
+
+                div {
+                    &.profile{
+                      left: 60%;
+
+                        img{
+                            border: none;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
 
         li {
             color: #0869B6;
@@ -69,5 +95,33 @@
                 }
             }
         }
+
+        &.add-task {
+            margin-top: -20px;
+
+            .lession-name{
+                display: flex;
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            li{
+                border-bottom: 1px solid lightgray;
+                padding: 5px;
+            }
+
+            .tasks{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .task-menu {
+        box-shadow: 4px 0px 8px #2D343614;
+        width: 200px;
+        margin: 0;
+        padding: 20px;
+        height: 100vh;
     }
 }

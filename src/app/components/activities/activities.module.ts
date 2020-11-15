@@ -9,6 +9,6 @@ import { ActivitiesComponent } from './activities.component';
   imports: [
     CommonModule
   ],
-  exports: [ActivitiesComponent]
+  exports: [ActivitiesComponent],
 })
 export class ActivitiesModule { }

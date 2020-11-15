@@ -1,5 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+@import './commonStyle.scss';
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.text-small {
+    font-size: small;
+}
+
+.text-medium {
+    font-size: medium;
+}
+
+.text-xxsmall {
+    font-size: xx-small;
+
+    &.gray {
+        color: #B2BEC3;
+    }
+}
+
+.margin-5 {
+    &.top {
+        margin-top: 5px;
+    }
+
+    &.bottom {
+        margin-bottom: 5px;
+    }
+
+    &.left {
+        margin-left: 5px;
+    }
+
+    &.right {
+        margin-right: 5px;
+    }
+}
+
+.margin-10 {
+    &.top {
+        margin-top: 10px;
+    }
+
+    &.bottom {
+        margin-bottom: 10px;
+    }
+
+    &.left {
+        margin-left: 10px;
+    }
+
+    &.right {
+        margin-right: 10px;
+    }
+}
+
+.margin-20 {
+    &.top {
+        margin-top: 20px;
+    }
+
+    &.bottom {
+        margin-bottom: 20px;
+    }
+
+    &.left {
+        margin-left: 20px;
+    }
+
+    &.right {
+        margin-right: 20px;
+    }
+}
+
+.gray-text-color {
+    color: $gray-text-color;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.text-center {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.btn{
+    font-size: 12px !important;
+}
+
+h3{
+    font-size: 23px !important;
 }

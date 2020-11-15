@@ -1,10 +1,47 @@
-.activity-container{
+@import '../../../commonStyle.scss';
+
+.activity-container {
     box-shadow: 4px 0px 8px #2D343614;
     border-left: 4px solid #D2EDFB;
-    width: 70%;
-    height: 200px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: flex-start;
+
+    .day-time {
+        background-color: #f6fbfe;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+
+        .time {
+            font-size: small;
+            margin: 3px;
+        }
+
+        .day {
+            font-size: x-small;
+            margin: 3px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .course-image {
+        padding: 0 30px 0 40px;
+   }
+
+    sub {
+        font-size: xx-small;
+        opacity: .5;
+    }
+
+    .go-btn{
+        margin-left: 100px;
+    }
 }

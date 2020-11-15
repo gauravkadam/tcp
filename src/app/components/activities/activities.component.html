@@ -1,12 +1,29 @@
-<p>TODAY'S ACTIVITIES</p>
+<p class="text-small">TODAY'S ACTIVITIES</p>
 <div class="activity-container">
-    <div>
-        4pm 5pm
+    <div class="day-time">
+        <img src="../../../assets/icons/icon_teacher.svg" alt="Icon-Teacher">
+        <sub class="margin-5 top">CLASS</sub>
+        <div class="time">{{activityInput.time}}</div>
+        <div class="day">{{activityInput.when}}</div>
     </div>
     <div>
-        Flexbox
+        <div class="flex">
+            <img class="course-image" src="../../../assets/icons/course.png" alt="Icon-Teacher">
+            <div>
+                <div class="text-medium">Class: {{activityInput.class}}</div>
+                <div class="text-xxsmall gray margin-5 top">{{activityInput.course}}</div>
+                <div class="margin-10 top gray-text-color">
+                    <span class="text-small">{{activityInput.lesson.lessonNo}}</span>
+                    <span class="margin-20 left right text-small">{{activityInput.lesson.task}}</span>
+                    <span class="text-small">{{activityInput.lesson.points}}</span>
+                </div>
+                <div class="text-xxsmall margin-20 top"><img class="margin-5 right" src="../../../assets/icons/calendar.svg" width="10" alt="calender"> Begins in {{activityInput.timeLeftToBegin}}</div>
+            </div>
+        </div>
     </div>
-    <div>
-        Go
+    <div class="go-btn">
+        <button type="button" class="btn btn-primary">GO <img src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
     </div>
 </div>
+
+
