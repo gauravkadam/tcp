@@ -22,8 +22,9 @@ export class SideMenuComponent implements OnInit {
 
     this.route.queryParams.subscribe(res => {
       this.addTask = res.addTask;
-      console.log(this.isCollapse)
-      console.log(this.addTask);
+     if(!location.pathname.match('dashboard')){
+       this.isCollapse = true;
+     }
     });
   }
 
