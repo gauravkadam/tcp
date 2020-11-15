@@ -83,29 +83,6 @@ body {
     color: $gray-text-color;
 }
 
-.nav-button {
-    background-color: #0A83E3;
-    border-radius: 12px;
-    color: white;
-    padding: 5px 15px;
-    font-size: 12px;
-    height: 20px;
-    line-height: 20px;
-    cursor: pointer;
-    font-weight: 400;
-    width: max-content;
-
-    li {
-        display: inline;
-
-        &.icon-forward-arrow {
-            content: url('./assets/icons/arrow-forward-outline.svg');
-            width: 12px;
-            padding-left: 10px;
-        }
-    }
-}
-
 .pull-left {
     float: left;
 }
@@ -118,4 +95,12 @@ body {
     display: block;
     margin: auto;
     text-align: center;
+}
+
+.btn{
+    font-size: 12px !important;
+}
+
+h3{
+    font-size: 23px !important;
 }

@@ -1,5 +1,5 @@
-<div class="container">
-        <ul *ngIf="!isCollapse">
+<div class="menu-container">
+        <ul *ngIf="!isCollapse && !addTask">
                 <li>
                         <div class="profile"><img src="../../../assets/icons/user.png" width="90">
                                 <div>Jason Hunt</div>
@@ -28,7 +28,7 @@
                                 src="../../../assets/icons/log-out.svg" width="25" alt="Logout"><label>Logout</label>
                 </li>
         </ul>
-        <ul class="collapse" *ngIf="isCollapse">
+        <ul class="collapse-menu" *ngIf="isCollapse && !addTask">
                 <li>
                         <div class="profile"><img src="../../../assets/icons/user.png" width="40">
                         </div>
@@ -54,9 +54,25 @@
                                 width="25" alt="Logout">
                 </li>
         </ul>
+        <ul *ngIf="addTask" class="add-task">
+                <li routerLink="add-lesson">
+                        <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5"
+                                        alt="Back"><label class="margin-5 left"> BACK TO LESSONS</label></div>
+                </li>
+                <div class="hr"></div>
+                <li class="lession-name"><strong>LESSON 01</strong>
+                        <div>CSS & WEBSITE LAYOUT</div>
+                </li>
+                <li class="tasks">
+                        <div><strong>Tasks</strong></div>
+                        <ng-container>
+                                <div>1. New Task</div>
+                        </ng-container>
+                </li>
+        </ul>
         <app-header></app-header>
-       <div>
-        <ng-content></ng-content>
-       </div>
+        <div>
+                <ng-content></ng-content>
+        </div>
 
 </div>

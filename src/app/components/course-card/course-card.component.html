@@ -16,11 +16,11 @@
         <span>Start: 08/01/2020</span><span>End: 08/02/2020</span>
     </div>
     <div class="text-xxsmall alignment margin-20 top">
-        <span>72 Students</span><span><div class="nav-button">GO <li class="icon-forward-arrow"></li></div></span>
+        <span>72 Students</span><span> <button type="button" class="btn btn-primary">GO <img src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button></span>
     </div>
     </ng-container>
     <div *ngIf="createCourse" class="create-course">
         <div class="text-small">New ideas coming up?</div>
-        <div class="nav-button" (click)="onCreate()">CREATE A COURSE <li class="icon-forward-arrow"></li></div>
+        <button type="button" (click)="onCreate()" class="btn btn-primary nav-button">CREATE A COURSE <img src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
     </div>
 </div>
