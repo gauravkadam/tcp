@@ -1,0 +1,74 @@
+<div class="dashboard-container">
+    <div class="forum-channel">
+        <div>
+            <strong class="text-small fontw"> Forum Channels</strong>
+            <div class="forum-card">
+                <div class="course-forum"><img src="../../../../assets/icons/course.png" width="30">
+                    <div class="margin-5 left"> Web Development for beginner | Fall 2020 <br><span
+                            class="status">Active</span></div>
+                </div>
+            </div>
+            <div class="forum-card">
+                <div class="course-forum"><img src="../../../../assets/icons/course.png" width="60">
+                    <div class="margin-5 left"> Web Development for beginner | Fall 2020 <br><span
+                            class="status">Active</span></div>
+                </div>
+            </div>
+            <div class="forum-card">
+                <div class="course-forum"><img src="../../../../assets/icons/course.png" width="60">
+                    <div class="margin-5 left"> Web Development for beginner | Fall 2020 <br><span
+                            class="status">Active</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="forum">
+            <div class="create"> <strong class="text-small fontw"> Forum: Web Development for beginner</strong> <button
+                    type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    CREATE A POST
+                </button>
+            </div>
+            <hr>
+            <div class="question-panel" *ngFor="let ele of forumData">
+                <div class="flex">
+                    <img src="../../../../assets/icons/user.png" width="40">
+                    <div class="margin-10 left">
+                        <strong class="text-small fontw">{{ele.name}}</strong>
+                        <div class="asked"> asked on {{ele.askedOn}}</div>
+                    </div>
+                </div>
+                <div class="margin-10 top">
+                    <strong class="fontw">{{ele.question}}</strong>
+                    <div class="text-small fontw400">{{ele.answer}} </div>
+                </div>
+                <hr>
+                <div class="actions">
+                    <span>Like({{ele.like}})</span><span>Comment</span><span>Share</span><span>Send</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
