@@ -10,11 +10,11 @@
         box-shadow: 4px 0px 8px #2D343614;
         width: 200px;
         margin: 0;
-        padding: 20px;
+        padding: 20px 0;
         height: 100vh;
 
         &.collapse-menu {
-            width: 100px;
+            width: max-content;
 
             li{
                 display: block;
