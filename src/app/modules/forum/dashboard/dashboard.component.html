@@ -28,23 +28,59 @@
                 </button>
             </div>
             <hr>
-            <div class="question-panel" *ngFor="let ele of forumData">
-                <div class="flex">
-                    <img src="../../../../assets/icons/user.png" width="40">
-                    <div class="margin-10 left">
-                        <strong class="text-small fontw">{{ele.name}}</strong>
-                        <div class="asked"> asked on {{ele.askedOn}}</div>
+            <ng-container *ngFor="let ele of forumData; let i=index">
+                <div class="question-panel">
+                    <div class="flex">
+                        <img src="../../../../assets/icons/user.png" width="40">
+                        <div class="margin-10 left">
+                            <strong class="text-small fontw">{{ele.name}}</strong>
+                            <div class="asked"> asked on {{ele.askedOn}}</div>
+                        </div>
+                    </div>
+                    <div class="margin-10 top">
+                        <strong class="fontw">{{ele.question}}</strong>
+                        <div class="text-small fontw400">{{ele.answer}} </div>
+                    </div>
+                    <hr>
+                    <div class="actions">
+                        <span>Like({{ele.like}})</span><span
+                            (click)="addComment(i)">Comment</span><span>Share</span><span>Send</span>
                     </div>
                 </div>
-                <div class="margin-10 top">
-                    <strong class="fontw">{{ele.question}}</strong>
-                    <div class="text-small fontw400">{{ele.answer}} </div>
+                <div *ngIf="ele.commentsVisible" class="comment-section">
+                    <div class="flex">
+                        <img class="user-profile" src="../../../../assets/icons/user.png" width="40">
+                        <div class="form-group width100">
+                            <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+                                <input type="email" class="form-control user-comment" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" formControlName="comment"
+                                    placeholder="Add a comment...">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <img class="user-profile" src="../../../../assets/icons/user.png" width="40">
+                        <span class="full-width">
+                            <div class="comment"> <strong class="text-small fontw">Gaurav Kadam</strong>
+                                <div class="asked"> replied on Nov 12 2020</div>
+                                <div class="text-small fontw400 margin-5 top">It is a long established fact that a
+                                    reader
+                                    will be distracted by the readable content of a page when looking at its layout. The
+                                    point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                                    letters,
+                                    as opposed to using 'Content here, content here', making it look like readable
+                                    English.
+                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                                    default model text, and a search for 'lorem ipsum' will uncover many web sites still
+                                    in
+                                    their infancy. Various versions have evolved over the years, sometimes by accident,
+                                    sometimes on purpose (injected humour and the like).</div>
+                            </div>
+                            <div class="like">Like(32)</div>
+                        </span>
+                    </div>
                 </div>
-                <hr>
-                <div class="actions">
-                    <span>Like({{ele.like}})</span><span>Comment</span><span>Share</span><span>Send</span>
-                </div>
-            </div>
+            </ng-container>
         </div>
     </div>
 
@@ -56,17 +92,35 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h6 class="modal-title" id="exampleModalLongTitle">Create a Post</h6>
+
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="flex">
+                        <img src="../../../../assets/icons/user.png" width="40">
+                        <div class="margin-10 left">
+                            <strong class="text-small fontw">Json Hunt</strong><span class="role"> (Teacher)</span>
+                            <div class="forum-channel-name"><strong>Forum Channel:</strong> Web Development for
+                                Beginners | Fall 2020</div>
+                        </div>
+                    </div>
+
+                    <form [formGroup]="forumForm" (ngSubmit)="submitForm()">
+                        <div class="form-group">
+                            <small id="emailHelp" class="form-text text-muted">YOUR QUESTION OR SUBJECT</small>
+                            <input type="email" class="form-control forms question" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" formControlName="question">
+                            <input type="email" class="form-control forms desc" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" formControlName="desc"
+                                placeholder="What do you want to talk about?">
+
+                        </div>
+                    </form>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="forumForm.invalid">POST</button>
                 </div>
             </div>
         </div>

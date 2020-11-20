@@ -4,6 +4,7 @@ import { ForumComponent } from './forum.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SideMenuModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })
