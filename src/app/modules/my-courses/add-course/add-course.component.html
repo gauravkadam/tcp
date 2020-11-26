@@ -1,8 +1,62 @@
 <div class="container">
-    <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label class="margin-5 left"> ADD NEW COURSE</label></div>
-    
-    <button routerLink="/my-courses/mycourses-list">SAVE</button>
+   <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label
+         class="margin-5 left"> ADD NEW COURSE</label></div>
+   <form>
+      <div class="form-group">
+         <label class="course-header" for="course-title">Course title</label>
+         <input teacher-container type="text" class="form-control" id="course-name" aria-describedby="titleHelp"
+            placeholder="Course name">
+      </div>
+      <div class="form-group">
+         <div class="course-header">
+            <span class="semester">Semester</span>
+            <span class="start-year">Year</span>
+            <span class="start-date">Start date</span>
+            <span class="end-date" >End date</span>
+         </div>
+         <select id="course" class="course-type" name="course">
+           <option value="Full">Full</option>
+           <option value="part">Part</option>
+         </select>    
+         <select id="course" class="course-type" name="year">
+            <option value="year" *ngFor="let year of yearsList">{{year}}</option>
+         </select>
+         <div class="date-section">
+            <input type="date" class="form-control" id="start-date" style="
+            margin-right: 15px;" placeholder="start date">     </div>
+         <div class="date-section">
+            <input  type="date" class="form-control" id="end-date" placeholder="end date">         </div>
+         </div>
+      <div class="form-group ">
+         <label class="course-header" for="course-title">Description</label>
+         <textarea teacher-container type="text" class="form-control" id="course-description"
+            aria-describedby="courseDesc" placeholder="Course description" rows="4"> </textarea>
+      </div>
+      <div class="form-group">
+         <label class="course-header" for="course-title">About the Teacher</label>
+         <textarea teacher-container type="text" class="form-control" id="teacher-name" placeholder="About the teacher"
+            rows="4"> </textarea>
+      </div>
+      <div class="course-header">
+         <span class="category">Category</span>
+         <span >Course level</span>
+      </div>
+      <div class="course-name">
+         <div *ngFor="let course of courseNames">
+            <label class="checkbox-inline">
+               <input style="margin-right: 10px;" type="checkbox" value="">{{course}}
+            </label>
+         </div>
+      </div>
+      <div class="course-level">
+         <div *ngFor="let courselevel of courseLevel">
+            <label class="checkbox-inline">
+               <input style="margin-right: 10px;" type="checkbox" value="">{{courselevel}}
+            </label>
+         </div>
+      </div>
+      <div class="save-btn">
+         <button type="button" routerLink="/my-courses/mycourses-list" class="btn btn-primary">SAVE</button> 
+      </div>
+   </form>
 </div>
-
-
-

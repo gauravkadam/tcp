@@ -1,7 +1,76 @@
 .container {
-    padding: 20px 50px;
+    padding: 50px 100px;
     box-sizing: border-box;
-    margin-top: 30px;
     width: 75%;
-    margin: 50px;
+    background: #FCFEFF 0% 0% no-repeat padding-box;
+    margin-left: 0;
+    margin-top: 50px;
+
+    .course-header {
+        font-weight: 500;
+    }
+
+    .semester{
+       width: 150px;
+       display: inline-block;
+    }
+    .start-year{
+        width: 153px;
+        display: inline-block;
+     }
+     .start-date{
+        width: 185px;
+        display: inline-block;
+     }
+     .end-date{
+        width: 150px;
+        display: inline-block;
+     }
+
+    .date-section {
+        display: inline-block;
+        input {
+            height: 26px;
+            width: 172px;
+            border: 1px solid grey;
+            color: grey;
+        }
+    }
+    .course-type {
+        width: 140px;
+        color: gray;
+        margin-right: 10px;
+    }
+       
+    .course-name {
+        width: 69%;
+        float: left;
+        background-color: white;   
+        box-shadow: 0px 4px 16px #455B6314;
+        border-radius: 12px;
+        padding: 10px 20px;
+    }
+    .course-level {
+        width: 27%;
+        background-color: white; 
+        box-shadow: 0px 4px 16px #455B6314;
+        border-radius: 12px;
+        padding: 10px 20px;
+        float: right;
+    }
+    .teacher-container {         
+        box-shadow: 0px 4px 16px #455B6314;
+        border-radius: 12px;
+    }
+
+    .category {
+        width: 485px;
+        display: inline-block;
+    }
+    .save-btn {
+        margin: 12% 50%;
+        display: inline-block;
+    }
+
+
 }
