@@ -7,6 +7,7 @@
 
     .add-first-task {
         box-shadow: 4px 0px 8px #2D343614;
+        border-radius: 5px;
         padding: 40px;
         width: 50%;
         margin: auto;
@@ -19,7 +20,7 @@
 
     .add-task-form {
         flex-grow: .8;
-        padding: 20px 40px;
+        padding: 20px 8%;
     }
 
     .task-type {
@@ -35,12 +36,14 @@
     .publish {
         box-shadow: 0px 1px 5px 2px #2D343614 !important;
         padding: 10px;
+        border-radius: 5px;
 
-        .actions{
+        .actions {
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
-            width: 80%;
+            justify-content: space-between;
+            width: 70%;
+            margin-left: auto;
         }
     }
 
@@ -48,7 +51,30 @@
         font-size: 12px;
     }
 
-    .text-color{
+    .text-color {
         color: #898d8e;
     }
+
+    .shadow {
+        box-shadow: 0px 1px 5px 2px #2D343614 !important;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .font-small {
+        font-size: 12px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    #upload-file {
+        display: none;
+    }
+
+    .margintb {
+        margin: 20px 0;
+    }
+
 }
