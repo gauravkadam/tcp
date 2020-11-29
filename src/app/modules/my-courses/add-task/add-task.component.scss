@@ -21,6 +21,7 @@
     .add-task-form {
         flex-grow: .8;
         padding: 20px 8%;
+        width: 50%;
     }
 
     .task-type {
@@ -77,4 +78,18 @@
         margin: 20px 0;
     }
 
+    .quiz {
+        .title {
+            display: inline-block;
+            width: 70%;
+            
+        }
+
+        .required-time{
+            margin-left: 20px;
+            display: inline-block;
+            width: 20%;
+       }
+    }
 }
+

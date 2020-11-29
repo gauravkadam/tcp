@@ -11,41 +11,81 @@
 
 <div class="add-task-container">
     <div class="add-task-form">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Task Title</label>
-                <input type="email" class="form-control font-small" id="exampleInputEmail1">
-            </div>
-        </form>
-        <div *ngIf="imgURL" class="text-center">
-            <div class="text-right">X</div>
-            <img class="margintb" [src]="imgURL" height="300" > 
-        </div>
-        <div>
-                <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-        </div>
+        <ng-container [ngSwitch]="taskType">
+            <ng-container *ngSwitchCase="'addReading'">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Task Title</label>
+                        <input type="email" class="form-control font-small" id="exampleInputEmail1">
+                    </div>
+                </form>
+                <div *ngIf="addText" class="margintb">
+                    <label>Element: Text</label>
+                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+                </div>
+                <div [innerHtml]="htmlContent"></div>
+                <div *ngIf="imgURL" class="text-center">
+                    <div class="text-right">X</div>
+                    <img class="margintb" [src]="imgURL" height="300">
+                </div>
+                <div class="dropdown text-center">
+                    <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        +
+                    </button> <span class="font-small margin-10 left">Add an element</span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" (click)="uploadText()">Text</a>
+                        <a class="dropdown-item" (click)="uploadFile()">Image</a>
+                        <a class="dropdown-item">Code</a>
+                        <a class="dropdown-item">Upload PDF</a>
+                    </div>
+                </div>
+                <input id="upload-file" #file type="file" accept='image/*' (change)="preview(file.files)" />
+            </ng-container>
+            <ng-container *ngSwitchCase="'addClass'">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Task Title</label>
+                        <input type="email" class="form-control font-small" id="exampleInputEmail1">
+                    </div>
+                </form>
+                <div class="margintb">
+                    <label>Element: Text</label>
+                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'addQuiz'">
+                <form>
+                    <div class="quiz">
+                        <div class="form-group title">
+                            <label for="exampleInputEmail1">Task Title</label>
+                            <input type="email" class="form-control font-small" id="exampleInputEmail1">
+                        </div>
+                        <div class="form-group required-time" >
+                            <label for="exampleInputEmail1">Required Time</label>
+                            <select class="form-control text-color font-small" id="exampleFormControlSelect1">
+                                    <option>10 min</option>
+                                    <option>20 min</option>
+                                    <option>30 min</option>
+                                </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="margintb">
+                        <label>Element: Intro Text</label>
+                        <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+                    </div>
+            </ng-container>
+        </ng-container>
 
-        <div class="dropdown text-center">
-            <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                +
-            </button> <span class="font-small margin-10 left">Add an element</span>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item">Text</a>
-                <a class="dropdown-item" (click)="uploadFile()">Image</a>
-                <a class="dropdown-item">Code</a>
-                <a class="dropdown-item">Upload PDF</a>
-            </div>
-        </div>
-        <input id="upload-file" #file type="file" accept='image/*' (change)="preview(file.files)" />
     </div>
     <div class="task-type">
         <div class="form-group">
             <label for="exampleFormControlSelect1">Task Type</label>
-            <select class="form-control text-color font-small" id="exampleFormControlSelect1">
-                <option>Quiz</option>
-                <option>Reading</option>
-                <option>Task</option>
+            <select [(ngModel)]="taskType" class="form-control text-color font-small" id="exampleFormControlSelect1">
+                <option [value]="'addQuiz'">Quiz</option>
+                <option [value]="'addReading'">Reading</option>
+                <option [value]="'addClass'">Class</option>
             </select>
         </div>
         <div class="form-group">

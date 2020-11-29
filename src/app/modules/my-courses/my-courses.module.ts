@@ -13,6 +13,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { MyCourseListComponent } from './my-course-list/my-course-list.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
     CourseCardModule,
     HttpClientModule,
     AngularEditorModule,
+    FormsModule,
     RouterModule.forChild(routes),
   ]
 })

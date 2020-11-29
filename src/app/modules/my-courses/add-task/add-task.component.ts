@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
@@ -6,69 +6,81 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.scss']
 })
-export class AddTaskComponent implements OnInit {
+export class AddTaskComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
+  public htmlContent: any;
+  public taskType: string;
   public imagePath;
   public imgURL: any;
   public message: string;
   public fileElement: any;
-  editorConfig: AngularEditorConfig = {
-    editable: true,
-    spellcheck: true,
-    height: 'auto',
-    minHeight: '0',
-    maxHeight: 'auto',
-    width: 'auto',
-    minWidth: '0',
-    translate: 'yes',
-    enableToolbar: false,
-    showToolbar: false,
-    placeholder: 'Enter text here...',
-    defaultParagraphSeparator: '',
-    defaultFontName: '',
-    defaultFontSize: '',
-    fonts: [
-      { class: 'arial', name: 'Arial' },
-      { class: 'times-new-roman', name: 'Times New Roman' },
-      { class: 'calibri', name: 'Calibri' },
-      { class: 'comic-sans-ms', name: 'Comic Sans MS' }
-    ],
-    uploadUrl: 'v1/image',
-    uploadWithCredentials: false,
-    sanitize: true,
-    toolbarPosition: 'top',
-    toolbarHiddenButtons: [
-      ['bold', 'italic'],
-      ['fontSize']
-    ]
-  };
+editorConfig: AngularEditorConfig = {
+  editable: true,
+  spellcheck: true,
+  height: 'auto',
+  minHeight: '0',
+  maxHeight: 'auto',
+  width: 'auto',
+  minWidth: '0',
+  translate: 'yes',
+  enableToolbar: false,
+  showToolbar: false,
+  placeholder: 'Enter text here...',
+  defaultParagraphSeparator: '',
+  defaultFontName: '',
+  defaultFontSize: '',
+  fonts: [
+    { class: 'arial', name: 'Arial' },
+    { class: 'times-new-roman', name: 'Times New Roman' },
+    { class: 'calibri', name: 'Calibri' },
+    { class: 'comic-sans-ms', name: 'Comic Sans MS' }
+  ],
+  uploadUrl: 'v1/image',
+  uploadWithCredentials: false,
+  sanitize: true,
+  toolbarPosition: 'top',
+  toolbarHiddenButtons: [
+    ['bold', 'italic'],
+    ['fontSize']
+  ]
+};
+  public addText: boolean;
 
-  preview(files) {
-    if (files.length === 0)
-      return;
+preview(files) {
+  if (files.length === 0)
+    return;
 
-    var mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
-      return;
-    }
-
-    var reader = new FileReader();
-    this.imagePath = files;
-    reader.readAsDataURL(files[0]);
-    reader.onload = (_event) => {
-      this.imgURL = reader.result;
-    }
+  var mimeType = files[0].type;
+  if (mimeType.match(/image\/*/) == null) {
+    this.message = "Only images are supported.";
+    return;
   }
 
-  ngOnInit(): void {
-    this.fileElement = document.getElementById('upload-file');
+  var reader = new FileReader();
+  this.imagePath = files;
+  reader.readAsDataURL(files[0]);
+  reader.onload = (_event) => {
+    this.imgURL = reader.result;
   }
+}
 
-  uploadFile() {
-    this.fileElement.click();
-  }
+ngOnInit(): void {
+  this.taskType = 'addReading';
+
+}
+
+uploadFile() {
+  this.fileElement.click();
+}
+
+uploadText() {
+  this.addText = true;
+}
+
+ngAfterViewInit(){
+  this.fileElement = document.getElementById('upload-file');
+}
 
 }
