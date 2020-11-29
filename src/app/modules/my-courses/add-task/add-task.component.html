@@ -21,6 +21,9 @@
             <div class="text-right">X</div>
             <img class="margintb" [src]="imgURL" height="300" > 
         </div>
+        <div>
+                <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+        </div>
 
         <div class="dropdown text-center">
             <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"

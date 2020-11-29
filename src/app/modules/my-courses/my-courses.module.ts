@@ -11,6 +11,8 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { AddLessonComponent } from './add-lesson/add-lesson.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { MyCourseListComponent } from './my-course-list/my-course-list.component';
+import { HttpClientModule} from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 
@@ -34,6 +36,8 @@ const routes: Routes = [
     SideMenuModule,
     ActivitiesModule,
     CourseCardModule,
+    HttpClientModule,
+    AngularEditorModule,
     RouterModule.forChild(routes),
   ]
 })
