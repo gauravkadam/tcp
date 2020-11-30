@@ -61,20 +61,48 @@
                             <label for="exampleInputEmail1">Task Title</label>
                             <input type="email" class="form-control font-small" id="exampleInputEmail1">
                         </div>
-                        <div class="form-group required-time" >
+                        <div class="form-group required-time">
                             <label for="exampleInputEmail1">Required Time</label>
                             <select class="form-control text-color font-small" id="exampleFormControlSelect1">
-                                    <option>10 min</option>
-                                    <option>20 min</option>
-                                    <option>30 min</option>
-                                </select>
+                                <option>10 min</option>
+                                <option>20 min</option>
+                                <option>30 min</option>
+                            </select>
                         </div>
                     </div>
                 </form>
                 <div class="margintb">
-                        <label>Element: Intro Text</label>
-                        <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-                    </div>
+                    <label>Element: Intro Text</label>
+                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+                </div>
+                <div *ngIf="questionArray.length > 0">
+                    <label>Quiz</label>
+                    <ng-container *ngFor="let data of questionArray; let i=index">
+                        <div class="question-panel font-small margin-10 top bottom"><span>S C P</span><span (click)="openAnswerPanel(i)">Question 1</span><span (click)="deleteQuestion(i)">D</span>
+                        </div>
+                        <div *ngIf="data.editable" class="answer-panel">
+                            <div class="form-group">
+                                <label>Question</label>
+                                <input type="text" class="form-control font-small" id="exampleInputEmail1">
+                                <div class="form-check margin-10 top bottom">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                            <span class="form-group title">
+                                                    <input type="text" class="form-control font-small" placeholder="add an option">
+                                            </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="text-center margin-10 top bottom">
+                    <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" (click)="addQuestion()">
+                        +
+                    </button> <span class="font-small margin-10 left">Add a question</span>
+                </div>
             </ng-container>
         </ng-container>
 
@@ -118,7 +146,7 @@
                 <hr>
                 <div class="actions">
                     <a href="">Cancel</a>
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary" (click)="addQuizTask()">Save</button>
                 </div>
             </div>
         </div>

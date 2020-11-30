@@ -82,14 +82,29 @@
         .title {
             display: inline-block;
             width: 70%;
-            
+
         }
 
-        .required-time{
+        .required-time {
             margin-left: 20px;
             display: inline-block;
             width: 20%;
-       }
+        }
+    }
+
+    .question-panel {
+        background-color: #f1f2f3;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .answer-panel {
+        background-color: #f5f6f7;
+        padding: 10px;
+    }
+    .form-check{
+        display: flex;
+    align-items: center;
     }
 }
-

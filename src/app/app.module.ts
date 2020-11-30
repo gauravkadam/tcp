@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideMenuModule } from './components/side-menu/side-menu.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SideMenuModule } from './components/side-menu/side-menu.module';
     BrowserModule,
     AppRoutingModule,
     SideMenuModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
