@@ -81,7 +81,13 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
 
   }
 
+  get getAnswersForm() {
+    return this.questionForm.get('answers') as FormArray;
+  }
 
+  addAlias() {
+    this.getAnswersForm.push(this.fb.control(''));
+  }
 
   uploadFile() {
     this.fileElement.click();
@@ -111,19 +117,20 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   addQuestion() {
-    console.log(this.questionForm.value);
+    
     this.questionArray.push({
       question: '',
       editable: false,
       answers: []
     });
+    this.openAnswerPanel(this.questionArray.length - 1);
+    this.questionForm.reset();
   }
 
-  submitQuestion(event){
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      this.addQuestion();
-     }
+  submitQuestion(i){
+    this.questionArray[i].editable = false;
+    this.questionArray[i].question = this.questionForm.value.question;
+    this.questionArray[i].answers = this.questionForm.value.answers;
   }
 
   openAnswerPanel(i) {
@@ -132,6 +139,11 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
         this.questionArray[index].editable = false;
       }
     }
+    this.questionForm.reset();
+    this.questionForm.patchValue({
+      question: this.questionArray[i].question,
+      answers: this.questionArray[i].answers
+    });
     this.questionArray[i].editable = !this.questionArray[i].editable;
   }
 

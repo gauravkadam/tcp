@@ -109,22 +109,25 @@
                             </span>
                         </div>
                         <div *ngIf="data.editable" class="answer-panel">
-                            <form [formGroup]="questionForm" (ngSubmit)="addQuestion()">
+                            <form [formGroup]="questionForm">
                                 <div class="form-group">
                                     <label>Question</label>
                                     <input type="text" class="form-control font-small" formControlName="question">
-                                    <div class="form-check margin-10 top bottom">
-                                        <input class="form-check-input" type="radio" name="exampleRadios"
-                                            id="exampleRadios1" value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            <span class="form-group title">
-                                                <input type="text" class="form-control font-small"
-                                                    placeholder="add an option" formControlName="answers"
-                                                    (keyup)="submitQuestion($event)">
-                             
-                                            </span>
-                                        </label>
-                                    </div>
+                                    <span formArrayName="answers">
+                                        <div *ngFor="let alias of getAnswersForm.controls; let i=index"
+                                            class="form-check margin-10 top bottom">
+                                            <input class="form-check-input" type="radio" name="exampleRadios"
+                                                id="exampleRadios1" value="option1" checked>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                <span class="form-group title">
+                                                    <input type="text" class="form-control font-small"
+                                                        placeholder="add an option" [formControlName]="i"
+                                                        >
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-primary" (click)="addAlias()">Add Ans</button> <button class="btn btn-primary margin-10 left" (click)="submitQuestion(i)">Submit</button>
+                                    </span>
                                 </div>
                             </form>
                         </div>
