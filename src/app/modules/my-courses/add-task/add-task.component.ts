@@ -104,14 +104,14 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   ngAfterViewChecked() {
     const test = document.getElementsByClassName('angular-editor-toolbar-set');
     if (test.length > 0) {
-      test[2].style.display = 'none';
-      test[3].style.display = 'none';
-      test[5].style.display = 'none';
-      test[6].style.display = 'none';
-      test[7].style.display = 'none';
-      test[9].style.display = 'none';
-      test[10].style.display = 'none';
-      test[11].style.display = 'none';
+      test[2]['style'].display = 'none';
+      test[3]['style'].display = 'none';
+      test[5]['style'].display = 'none';
+      test[6]['style'].display = 'none';
+      test[7]['style'].display = 'none';
+      test[9]['style'].display = 'none';
+      test[10]['style'].display = 'none';
+      test[11]['style'].display = 'none';
     }
 
   }
