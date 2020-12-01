@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { MyCourseService } from 'src/app/services/my-course.service';
+import { FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-add-task',
@@ -9,7 +10,7 @@ import { MyCourseService } from 'src/app/services/my-course.service';
 })
 export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
-  constructor(private service: MyCourseService) { }
+  constructor(private service: MyCourseService, private fb: FormBuilder) { }
 
   public htmlContent: any;
   public taskType: string;
@@ -18,6 +19,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   public message: string;
   public fileElement: any;
   public questionArray = [];
+  public questionForm: any;
   editorConfig: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
@@ -69,9 +71,17 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   ngOnInit(): void {
-    this.taskType = 'addReading';
+    this.taskType = 'addQuiz';
+    this.questionForm = this.fb.group({
+      question:[''],
+      answers: this.fb.array([
+        this.fb.control('')
+      ])
+    })
 
   }
+
+
 
   uploadFile() {
     this.fileElement.click();
@@ -85,20 +95,23 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     this.fileElement = document.getElementById('upload-file');
   }
 
-  ngAfterViewChecked(){
+  ngAfterViewChecked() {
     const test = document.getElementsByClassName('angular-editor-toolbar-set');
-    test[2].style.display = 'none';
-    test[3].style.display = 'none';
-    test[5].style.display = 'none';
-    test[6].style.display = 'none';
-    test[7].style.display = 'none';
-    test[9].style.display = 'none';
-    test[10].style.display = 'none';
-    test[11].style.display = 'none';
+    if (test.length > 0) {
+      test[2].style.display = 'none';
+      test[3].style.display = 'none';
+      test[5].style.display = 'none';
+      test[6].style.display = 'none';
+      test[7].style.display = 'none';
+      test[9].style.display = 'none';
+      test[10].style.display = 'none';
+      test[11].style.display = 'none';
+    }
 
   }
 
-  addQuestion(){
+  addQuestion() {
+    console.log(this.questionForm.value);
     this.questionArray.push({
       question: '',
       editable: false,
@@ -106,27 +119,34 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     });
   }
 
-  openAnswerPanel(i){
-    for(let index in this.questionArray){
-      if(index != i){
+  submitQuestion(event){
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      this.addQuestion();
+     }
+  }
+
+  openAnswerPanel(i) {
+    for (let index in this.questionArray) {
+      if (index != i) {
         this.questionArray[index].editable = false;
       }
     }
     this.questionArray[i].editable = !this.questionArray[i].editable;
   }
 
-  deleteQuestion(i){
-    this.questionArray.splice(i,1);
+  deleteQuestion(i) {
+    this.questionArray.splice(i, 1);
   }
 
-  addQuizTask(){
+  addQuizTask() {
     this.service.addQuizTask({
       TypeId: 1,
       Title: 'HTML'
     })
-    .subscribe(res => {
-      console.log(res);
-    })
+      .subscribe(res => {
+        console.log(res);
+      })
   }
 
 }

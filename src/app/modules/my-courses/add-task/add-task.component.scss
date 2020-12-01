@@ -99,12 +99,18 @@
         display: flex;
         justify-content: space-between;
     }
+
     .answer-panel {
         background-color: #f5f6f7;
         padding: 10px;
     }
-    .form-check{
+
+    .form-check {
         display: flex;
-    align-items: center;
+        align-items: center;
+    }
+
+    .pointer {
+        cursor: pointer;
     }
 }
