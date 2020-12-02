@@ -73,7 +73,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   ngOnInit(): void {
     this.taskType = 'addQuiz';
     this.questionForm = this.fb.group({
-      question:[''],
+      question: [''],
       answers: this.fb.array([
         this.fb.control('')
       ])
@@ -117,7 +117,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   addQuestion() {
-    
+
     this.questionArray.push({
       question: '',
       editable: false,
@@ -127,7 +127,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     this.questionForm.reset();
   }
 
-  submitQuestion(i){
+  submitQuestion(i) {
     this.questionArray[i].editable = false;
     this.questionArray[i].question = this.questionForm.value.question;
     this.questionArray[i].answers = this.questionForm.value.answers;

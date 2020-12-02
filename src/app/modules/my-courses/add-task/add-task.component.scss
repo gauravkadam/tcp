@@ -113,4 +113,57 @@
     .pointer {
         cursor: pointer;
     }
+
+
 }
+
+.task-view-container {
+    margin-top: 60px;
+
+
+    .quiz-view {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        color: #636e71;
+        margin-top: 20px;
+    }
+
+    .row {
+        width: 100%;
+
+        p {
+            font-weight: 200;
+        }
+    }
+
+    .col-md-6 {
+        padding: 0 !important;
+    }
+
+    .quiz-test {
+        padding: 20px;
+        margin: 40px 0;
+        box-shadow: 0px 1px 5px 2px #2D343614 !important;
+        border-radius: 10px;
+        background: url(../../../../assets/icons/quiz.png);
+        background-size: 400px;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    .width40 {
+        width: 40%;
+    }
+
+    .margin20 {
+        margin: 20px 0;
+    }
+
+    .points {
+        font-weight: 200;
+        font-size: 14px;
+    }
+}
+
