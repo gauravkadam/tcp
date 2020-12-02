@@ -51,7 +51,8 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     ]
   };
   public addText: boolean;
-
+  public isTaskPanelOpen: boolean;
+  
   preview(files) {
     if (files.length === 0)
       return;
@@ -159,6 +160,10 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
       .subscribe(res => {
         console.log(res);
       })
+  }
+
+  openTasks() {
+    this.isTaskPanelOpen = !this.isTaskPanelOpen;
   }
 
 }

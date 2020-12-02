@@ -9,214 +9,264 @@
     </div>
 </div> -->
 
-<!-- <div class="add-task-container">
-    <div class="add-task-form">
-        <ng-container [ngSwitch]="taskType">
-            <ng-container *ngSwitchCase="'addReading'">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Task Title</label>
-                        <input type="email" class="form-control font-small" id="exampleInputEmail1">
+
+<div class="flex">
+    <div class="menu-container">
+        <ul>
+            <li>
+                <label> BACK TO LESSONS</label>
+            </li>
+            <hr>
+            <li class="lessons">
+                <label><b>LESSON 01</b></label>
+                <label>CSS & WEBSITE LAYOUT</label>
+            </li>
+            <hr>
+            <li>
+                <div>
+                    <label (click)="openTasks()"><b>Tasks</b></label>
+                </div>
+            </li>
+
+            <ng-container *ngIf="isTaskPanelOpen">
+                <li routerLink="/home" routerLinkActive="active">
+                    <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+                    <div class="lesson-name">
+                        <label class="task-type-name">Reading</label>
+                        <label>HTML</label>
                     </div>
-                </form>
-                <div *ngIf="addText" class="margintb">
-                    <label>Element: Text</label>
-                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-                </div>
-                <div [innerHtml]="htmlContent"></div>
-                <div *ngIf="imgURL" class="text-center">
-                    <div class="text-right">X</div>
-                    <img class="margintb" [src]="imgURL" height="300">
-                </div>
-                <div class="dropdown text-center">
-                    <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        +
-                    </button> <span class="font-small margin-10 left">Add an element</span>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" (click)="uploadText()">Text</a>
-                        <a class="dropdown-item" (click)="uploadFile()">Image</a>
-                        <a class="dropdown-item">Code</a>
-                        <a class="dropdown-item">Upload PDF</a>
+                </li>
+                <li routerLink="/home" routerLinkActive="active">
+                    <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+                    <div class="lesson-name">
+                        <label class="task-type-name">Quiz</label>
+                        <label>web</label>
                     </div>
-                </div>
-                <input id="upload-file" #file type="file" accept='image/*' (change)="preview(file.files)" />
+                </li>
+                <li routerLink="/home" routerLinkActive="active">
+                    <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+                    <div class="lesson-name">
+                        <label class="task-type-name">Class</label>
+                        <label>HTML</label>
+                    </div>
+                </li>
             </ng-container>
-            <ng-container *ngSwitchCase="'addClass'">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Task Title</label>
-                        <input type="email" class="form-control font-small" id="exampleInputEmail1">
-                    </div>
-                </form>
-                <div class="margintb">
-                    <label>Element: Text</label>
-                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-                </div>
-            </ng-container>
-            <ng-container *ngSwitchCase="'addQuiz'">
-                <form>
-                    <div class="quiz">
-                        <div class="form-group title">
-                            <label for="exampleInputEmail1">Task Title</label>
-                            <input type="email" class="form-control font-small" id="exampleInputEmail1">
+        </ul>
+
+    </div>
+    <!-- <div class="add-task-container">
+            <div class="add-task-form">
+                <ng-container [ngSwitch]="taskType">
+                    <ng-container *ngSwitchCase="'addReading'">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Task Title</label>
+                                <input type="email" class="form-control font-small" id="exampleInputEmail1">
+                            </div>
+                        </form>
+                        <div *ngIf="addText" class="margintb">
+                            <label>Element: Text</label>
+                            <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
                         </div>
-                        <div class="form-group required-time">
-                            <label for="exampleInputEmail1">Required Time</label>
-                            <select class="form-control text-color font-small" id="exampleFormControlSelect1">
-                                <option>10 min</option>
-                                <option>20 min</option>
-                                <option>30 min</option>
-                            </select>
+                        <div [innerHtml]="htmlContent"></div>
+                        <div *ngIf="imgURL" class="text-center">
+                            <div class="text-right">X</div>
+                            <img class="margintb" [src]="imgURL" height="300">
                         </div>
-                    </div>
-                </form>
-                <div class="margintb">
-                    <label>Element: Intro Text</label>
-                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
-                </div>
-                <div *ngIf="questionArray.length > 0">
-                    <label>Quiz</label>
-                    <ng-container *ngFor="let data of questionArray; let i=index">
-                        <div class="question-panel font-small margin-10 top bottom"><span class="pointer"><svg
-                                    width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-gear"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
-                                    <path fill-rule="evenodd"
-                                        d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
-                                </svg><span class="margin-10 left right pointer">
-                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-files"
-                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M4 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z" />
-                                        <path
-                                            d="M6 0h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1H4a2 2 0 0 1 2-2z" />
-                                    </svg>
-                                </span> <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrows-move"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
-                                </svg></span><span (click)="openAnswerPanel(i)" class="pointer">Question
-                                {{i+1}}</span><span class="pointer" (click)="deleteQuestion(i)">
-                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-trash"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                    <path fill-rule="evenodd"
-                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                </svg>
-                            </span>
+                        <div class="dropdown text-center">
+                            <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                +
+                            </button> <span class="font-small margin-10 left">Add an element</span>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" (click)="uploadText()">Text</a>
+                                <a class="dropdown-item" (click)="uploadFile()">Image</a>
+                                <a class="dropdown-item">Code</a>
+                                <a class="dropdown-item">Upload PDF</a>
+                            </div>
                         </div>
-                        <div *ngIf="data.editable" class="answer-panel">
-                            <form [formGroup]="questionForm">
-                                <div class="form-group">
-                                    <label>Question</label>
-                                    <input type="text" class="form-control font-small" formControlName="question">
-                                    <span formArrayName="answers">
-                                        <div *ngFor="let alias of getAnswersForm.controls; let i=index"
-                                            class="form-check margin-10 top bottom">
-                                            <input class="form-check-input" type="radio" name="exampleRadios"
-                                                id="exampleRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="exampleRadios1">
-                                                <span class="form-group title">
-                                                    <input type="text" class="form-control font-small"
-                                                        placeholder="add an option" [formControlName]="i"
-                                                        >
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <button class="btn btn-primary" (click)="addAlias()">Add Ans</button> <button class="btn btn-primary margin-10 left" (click)="submitQuestion(i)">Submit</button>
-                                    </span>
-                                </div>
-                            </form>
+                        <input id="upload-file" #file type="file" accept='image/*' (change)="preview(file.files)" />
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'addClass'">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Task Title</label>
+                                <input type="email" class="form-control font-small" id="exampleInputEmail1">
+                            </div>
+                        </form>
+                        <div class="margintb">
+                            <label>Element: Text</label>
+                            <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
                         </div>
                     </ng-container>
+                    <ng-container *ngSwitchCase="'addQuiz'">
+                        <form>
+                            <div class="quiz">
+                                <div class="form-group title">
+                                    <label for="exampleInputEmail1">Task Title</label>
+                                    <input type="email" class="form-control font-small" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group required-time">
+                                    <label for="exampleInputEmail1">Required Time</label>
+                                    <select class="form-control text-color font-small" id="exampleFormControlSelect1">
+                                        <option>10 min</option>
+                                        <option>20 min</option>
+                                        <option>30 min</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="margintb">
+                            <label>Element: Intro Text</label>
+                            <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+                        </div>
+                        <div *ngIf="questionArray.length > 0">
+                            <label>Quiz</label>
+                            <ng-container *ngFor="let data of questionArray; let i=index">
+                                <div class="question-panel font-small margin-10 top bottom"><span class="pointer"><svg
+                                            width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-gear"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
+                                            <path fill-rule="evenodd"
+                                                d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
+                                        </svg><span class="margin-10 left right pointer">
+                                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-files"
+                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M4 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z" />
+                                                <path
+                                                    d="M6 0h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1H4a2 2 0 0 1 2-2z" />
+                                            </svg>
+                                        </span> <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrows-move"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+                                        </svg></span><span (click)="openAnswerPanel(i)" class="pointer">Question
+                                        {{i+1}}</span><span class="pointer" (click)="deleteQuestion(i)">
+                                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-trash"
+                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd"
+                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div *ngIf="data.editable" class="answer-panel">
+                                    <form [formGroup]="questionForm">
+                                        <div class="form-group">
+                                            <label>Question</label>
+                                            <input type="text" class="form-control font-small" formControlName="question">
+                                            <span formArrayName="answers">
+                                                <div *ngFor="let alias of getAnswersForm.controls; let i=index"
+                                                    class="form-check margin-10 top bottom">
+                                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                                        id="exampleRadios1" value="option1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        <span class="form-group title">
+                                                            <input type="text" class="form-control font-small"
+                                                                placeholder="add an option" [formControlName]="i"
+                                                                >
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <button class="btn btn-primary" (click)="addAlias()">Add Ans</button> <button class="btn btn-primary margin-10 left" (click)="submitQuestion(i)">Submit</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="text-center margin-10 top bottom">
+                            <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" (click)="addQuestion()">
+                                +
+                            </button> <span class="font-small margin-10 left">Add a question</span>
+                        </div>
+                    </ng-container>
+                </ng-container>
+        
+            </div>
+            <div class="task-type">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Task Type</label>
+                    <select [(ngModel)]="taskType" class="form-control text-color font-small" id="exampleFormControlSelect1">
+                        <option [value]="'addQuiz'">Quiz</option>
+                        <option [value]="'addReading'">Reading</option>
+                        <option [value]="'addClass'">Class</option>
+                    </select>
                 </div>
-                <div class="text-center margin-10 top bottom">
-                    <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" (click)="addQuestion()">
-                        +
-                    </button> <span class="font-small margin-10 left">Add a question</span>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Points</label>
+                    <select class="form-control text-color font-small" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
                 </div>
-            </ng-container>
-        </ng-container>
-
-    </div>
-    <div class="task-type">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Task Type</label>
-            <select [(ngModel)]="taskType" class="form-control text-color font-small" id="exampleFormControlSelect1">
-                <option [value]="'addQuiz'">Quiz</option>
-                <option [value]="'addReading'">Reading</option>
-                <option [value]="'addClass'">Class</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Points</label>
-            <select class="form-control text-color font-small" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-        </div>
-        <div>
-            <label for="">Due date</label>
-        </div>
-        <div class="margin-10 top">
-            <label class="form-check-label" for="defaultCheck1">
-                Requirements
-            </label>
-            <div class="form-check margin-10 top shadow">
-                <input class="" type="checkbox" value="" id="defaultCheck1">
-                <label class="text-color margin-10 left">Complete previous task</label>
+                <div>
+                    <label for="">Due date</label>
+                </div>
+                <div class="margin-10 top">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Requirements
+                    </label>
+                    <div class="form-check margin-10 top shadow">
+                        <input class="" type="checkbox" value="" id="defaultCheck1">
+                        <label class="text-color margin-10 left">Complete previous task</label>
+                    </div>
+                </div>
+                <div class="margin-10 top bottom">
+                    <label for="">Publish</label>
+                    <div class="publish">
+                        <div><label class="text-color">Status: </label> <label class="margin-10 left right">Draft</label> <a
+                                href="">Edit</a></div>
+                        <div><label class="text-color">Last update: </label> <label
+                                class="margin-10 left right">09/14/2020</label>
+                        </div>
+                        <hr>
+                        <div class="actions">
+                            <a href="">Cancel</a>
+                            <button class="btn btn-primary" (click)="addQuizTask()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  -->
+    <!-- <div class="task-view-container">
+        <div class="row">
+            <div class="offset-md-3"></div>
+            <div class="quiz-view">
+                <span>TASK 06</span>
+                <span>|</span>
+                <span>Quiz</span>
+                <span>30 Points</span>
+                <span><img src="../../../../assets/icons/calendar.svg" width="12"> Due Date: 10/10/2020</span>
             </div>
         </div>
-        <div class="margin-10 top bottom">
-            <label for="">Publish</label>
-            <div class="publish">
-                <div><label class="text-color">Status: </label> <label class="margin-10 left right">Draft</label> <a
-                        href="">Edit</a></div>
-                <div><label class="text-color">Last update: </label> <label
-                        class="margin-10 left right">09/14/2020</label>
-                </div>
-                <hr>
-                <div class="actions">
-                    <a href="">Cancel</a>
-                    <button class="btn btn-primary" (click)="addQuizTask()">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<div class="task-view-container">
-    <div class="row">
-        <div class="offset-md-3"></div>
-        <div class="quiz-view">
-            <span>TASK 06</span>
-            <span>|</span>
-            <span>Quiz</span>
-            <span>30 Points</span>
-            <span><img src="../../../../assets/icons/calendar.svg" width="12"> Due Date: 10/10/2020</span>
-        </div>
-    </div>
-    <div class="row">
+        <div class="row">
             <div class="offset-md-3"></div>
             <div class="margin-20 top col-md-6">
                 <div>Quiz</div>
-                <p class="margin-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="margin-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="quiz-test">
                     <h5>Test your knowledge</h5>
                     <div>
-                        <p class="width40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="width40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         <div>Points</div>
                         <div class="points">30 Points</div>
                         <div class="margin-20 top">Required Time</div>
                         <div class="points">10 Minutes</div>
-                        <button class="btn btn-primary margin20">START <img src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
+                        <button class="btn btn-primary margin20">START <img
+                                src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
                     </div>
                 </div>
             </div>
         </div>
+    </div> -->
 </div>
