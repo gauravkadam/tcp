@@ -13,8 +13,8 @@
 <div class="flex">
     <div class="menu-container">
         <ul>
-            <li>
-                <label> BACK TO LESSONS</label>
+            <li routerLink="/my-courses/mycourses-list">
+                <label class="color-black back-to-lesson"> <b>BACK TO LESSONS</b></label>
             </li>
             <hr>
             <li class="lessons">
@@ -22,29 +22,30 @@
                 <label>CSS & WEBSITE LAYOUT</label>
             </li>
             <hr>
-            <li>
+            <li class="margin-15" (click)="openTasks()">
                 <div>
-                    <label (click)="openTasks()"><b>Tasks</b></label>
+                    <label class="width90"><b>Tasks</b><img class="pull-right" [ngClass]="{'rotate-up' : isTaskPanelOpen}" src="../../../../assets/icons/chevron-down-outline.svg" alt=""></label>
                 </div>
             </li>
+            <hr>
 
             <ng-container *ngIf="isTaskPanelOpen">
-                <li routerLink="/home" routerLinkActive="active">
-                    <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+                <li class="margin-top-15 color-black" routerLink="reading" routerLinkActive="active" [queryParams]="{ addTask: true }">
+                    <img class="task-icon" src="../../../assets/icons/icon_teacher.svg" width="20" alt="Home">
                     <div class="lesson-name">
                         <label class="task-type-name">Reading</label>
                         <label>HTML</label>
                     </div>
                 </li>
-                <li routerLink="/home" routerLinkActive="active">
-                    <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+                <li class="margin-top-15 color-black" routerLink="quiz" routerLinkActive="active" [queryParams]="{ addTask: true }">
+                    <img class="task-icon"  src="../../../assets/icons/icon_teacher.svg" width="20" alt="Home">
                     <div class="lesson-name">
                         <label class="task-type-name">Quiz</label>
-                        <label>web</label>
+                        <label>Web</label>
                     </div>
                 </li>
-                <li routerLink="/home" routerLinkActive="active">
-                    <img src="../../../assets/icons/home.svg" width="25" alt="Home">
+                <li class="margin-top-15 color-black" routerLink="/test" routerLinkActive="active">
+                    <img class="task-icon"  src="../../../assets/icons/icon_teacher.svg" width="20" alt="Home">
                     <div class="lesson-name">
                         <label class="task-type-name">Class</label>
                         <label>HTML</label>
@@ -54,7 +55,7 @@
         </ul>
 
     </div>
-    <!-- <div class="add-task-container">
+     <div *ngIf="isViewTask" class="add-task-container">
             <div class="add-task-form">
                 <ng-container [ngSwitch]="taskType">
                     <ng-container *ngSwitchCase="'addReading'">
@@ -233,40 +234,7 @@
                     </div>
                 </div>
             </div>
-        </div>  -->
-    <!-- <div class="task-view-container">
-        <div class="row">
-            <div class="offset-md-3"></div>
-            <div class="quiz-view">
-                <span>TASK 06</span>
-                <span>|</span>
-                <span>Quiz</span>
-                <span>30 Points</span>
-                <span><img src="../../../../assets/icons/calendar.svg" width="12"> Due Date: 10/10/2020</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="offset-md-3"></div>
-            <div class="margin-20 top col-md-6">
-                <div>Quiz</div>
-                <p class="margin-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="quiz-test">
-                    <h5>Test your knowledge</h5>
-                    <div>
-                        <p class="width40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <div>Points</div>
-                        <div class="points">30 Points</div>
-                        <div class="margin-20 top">Required Time</div>
-                        <div class="points">10 Minutes</div>
-                        <button class="btn btn-primary margin20">START <img
-                                src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+        </div>  
+    
+<ng-container *ngIf="!isViewTask"><router-outlet></router-outlet></ng-container>
 </div>

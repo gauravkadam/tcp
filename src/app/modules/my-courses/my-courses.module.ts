@@ -11,9 +11,10 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { AddLessonComponent } from './add-lesson/add-lesson.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { MyCourseListComponent } from './my-course-list/my-course-list.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewTaskComponent } from './add-task/view-task/view-task.component';
 
 
 
@@ -24,14 +25,20 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'add-course', component: AddCourseComponent },
       { path: 'add-lesson', component: AddLessonComponent },
-      { path: 'add-task', component: AddTaskComponent },
+      {
+        path: 'add-task', component: AddTaskComponent, children: [
+          { path: 'reading', component: ViewTaskComponent },
+          { path: 'quiz', component: ViewTaskComponent },
+          { path: '', redirectTo: 'reading', pathMatch: 'full' }
+        ]
+      },
       { path: 'mycourses-list', component: MyCourseListComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
 ]
 @NgModule({
-  declarations: [MyCoursesComponent, DuplicateCoursePanelComponent, DashboardComponent, AddCourseComponent, AddLessonComponent, AddTaskComponent, MyCourseListComponent],
+  declarations: [MyCoursesComponent, DuplicateCoursePanelComponent, DashboardComponent, AddCourseComponent, AddLessonComponent, AddTaskComponent, MyCourseListComponent, ViewTaskComponent],
   imports: [
     CommonModule,
     SideMenuModule,

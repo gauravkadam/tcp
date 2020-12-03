@@ -195,10 +195,13 @@
             font-weight: 300;
             padding: 10px;
             margin: 5px;
+            outline: none;
 
             &.lessons {
                 display: flex;
                 flex-direction: column;
+                line-height: .7;
+                margin: -10px;
             }
 
             &.active {
@@ -256,13 +259,45 @@
     }
 }
 
-.lesson-name{
+.lesson-name {
     display: flex;
     flex-direction: column;
     line-height: .5;
 }
 
-.task-type-name{
+.task-type-name {
     font-size: 10px;
     font-weight: 200;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.back-to-lesson {
+    margin: -18px 0;
+}
+
+.margin-15 {
+    margin: -15px 0 !important;
+}
+
+.margin-top-15 {
+    margin-top: -5px !important;
+}
+
+.task-icon{
+    border: 1px solid black;
+    padding: 5px;
+    box-sizing: content-box;
+    border-radius: 50%;
+}
+
+.width90{
+    width: 90%;
+}
+
+.rotate-up{
+    transform: rotate(180deg);
+    transition: .5s;
 }

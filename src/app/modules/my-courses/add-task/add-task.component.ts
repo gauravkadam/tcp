@@ -52,6 +52,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   };
   public addText: boolean;
   public isTaskPanelOpen: boolean;
+  public isViewTask: boolean;
   
   preview(files) {
     if (files.length === 0)
@@ -78,7 +79,12 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
       answers: this.fb.array([
         this.fb.control('')
       ])
-    })
+    });
+
+    this.service.getViewTask()
+    .subscribe(data => {
+      this.isViewTask = data
+    });
 
   }
 
@@ -160,6 +166,8 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
       .subscribe(res => {
         console.log(res);
       })
+
+      this.service.setViewTask(false);
   }
 
   openTasks() {
