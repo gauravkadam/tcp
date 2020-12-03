@@ -51,7 +51,9 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     ]
   };
   public addText: boolean;
-
+  public isTaskPanelOpen: boolean;
+  public isViewTask: boolean;
+  
   preview(files) {
     if (files.length === 0)
       return;
@@ -73,11 +75,16 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   ngOnInit(): void {
     this.taskType = 'addQuiz';
     this.questionForm = this.fb.group({
-      question:[''],
+      question: [''],
       answers: this.fb.array([
         this.fb.control('')
       ])
-    })
+    });
+
+    this.service.getViewTask()
+    .subscribe(data => {
+      this.isViewTask = data
+    });
 
   }
 
@@ -117,7 +124,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   addQuestion() {
-    
+
     this.questionArray.push({
       question: '',
       editable: false,
@@ -127,7 +134,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     this.questionForm.reset();
   }
 
-  submitQuestion(i){
+  submitQuestion(i) {
     this.questionArray[i].editable = false;
     this.questionArray[i].question = this.questionForm.value.question;
     this.questionArray[i].answers = this.questionForm.value.answers;
@@ -159,6 +166,12 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
       .subscribe(res => {
         console.log(res);
       })
+
+      this.service.setViewTask(false);
+  }
+
+  openTasks() {
+    this.isTaskPanelOpen = !this.isTaskPanelOpen;
   }
 
 }

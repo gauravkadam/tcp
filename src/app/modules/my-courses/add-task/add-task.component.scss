@@ -17,6 +17,7 @@
 .add-task-container {
     margin: 50px;
     display: flex;
+    flex-grow: 1;
 
     .add-task-form {
         flex-grow: .8;
@@ -113,4 +114,190 @@
     .pointer {
         cursor: pointer;
     }
+
+
+}
+
+.task-view-container {
+    margin-top: 60px;
+
+
+    .quiz-view {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        color: #636e71;
+        margin-top: 20px;
+    }
+
+    .row {
+        width: 100%;
+
+        p {
+            font-weight: 200;
+        }
+    }
+
+    .col-md-6 {
+        padding: 0 !important;
+    }
+
+    .quiz-test {
+        padding: 20px;
+        margin: 40px 0;
+        box-shadow: 0px 1px 5px 2px #2D343614 !important;
+        border-radius: 10px;
+        background: url(../../../../assets/icons/quiz.png);
+        background-size: 400px;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    .width40 {
+        width: 40%;
+    }
+
+    .margin20 {
+        margin: 20px 0;
+    }
+
+    .points {
+        font-weight: 200;
+        font-size: 14px;
+    }
+}
+
+.menu-container {
+    display: flex;
+    z-index: 1;
+    background: white;
+
+    div {
+        flex-grow: 2;
+    }
+
+    ul {
+        list-style: none;
+        box-shadow: 4px 0px 8px #2D343614;
+        width: 200px;
+        margin: 0;
+        padding: 20px 0;
+        height: 100vh;
+
+
+        li {
+            color: #0869B6;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 300;
+            padding: 10px;
+            margin: 5px;
+            outline: none;
+
+            &.lessons {
+                display: flex;
+                flex-direction: column;
+                line-height: .7;
+                margin: -10px;
+            }
+
+            &.active {
+                background-color: #f5fafe;
+                border-bottom-right-radius: 15px;
+                border-top-right-radius: 15px;
+                border-left: 4px solid #0A83E3;
+            }
+
+            label {
+                margin-left: 12px;
+                cursor: pointer;
+            }
+
+            &.settings {
+                position: absolute;
+                bottom: 45px;
+                width: 160px;
+            }
+
+            &.logout {
+                position: absolute;
+                bottom: 0;
+            }
+
+            div {
+                &.profile {
+                    position: relative;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+
+                    img {
+                        border: 4px solid lightskyblue;
+                        border-radius: 50%;
+                        width: 90px;
+                        height: 90px;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        display: flex;
+                        margin: auto;
+                    }
+
+                    div {
+                        color: #2D3436;
+                        text-align: center;
+
+                        &.role {
+                            font-size: smaller;
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lesson-name {
+    display: flex;
+    flex-direction: column;
+    line-height: .5;
+}
+
+.task-type-name {
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.back-to-lesson {
+    margin: -18px 0;
+}
+
+.margin-15 {
+    margin: -15px 0 !important;
+}
+
+.margin-top-15 {
+    margin-top: -5px !important;
+}
+
+.task-icon{
+    border: 1px solid black;
+    padding: 5px;
+    box-sizing: content-box;
+    border-radius: 50%;
+}
+
+.width90{
+    width: 90%;
+}
+
+.rotate-up{
+    transform: rotate(180deg);
+    transition: .5s;
 }
