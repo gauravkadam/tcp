@@ -8,6 +8,8 @@ import { MyCourseService } from 'src/app/services/my-course.service';
 })
 export class ViewTaskComponent implements OnInit {
 
+  public quizStage = 1;
+
   constructor(private service:MyCourseService) { }
 
   ngOnInit(): void {

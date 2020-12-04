@@ -175,7 +175,13 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   makeEditTaskVisible(){
+    this.openTasks();
     this.isViewTask = true;
+  }
+
+  makeEditTaskInvisible(){
+    this.openTasks();
+    this.isViewTask = false;
   }
 
 }

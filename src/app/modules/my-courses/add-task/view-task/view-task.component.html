@@ -17,20 +17,88 @@
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div class="quiz-test">
-                <h5>Test your knowledge</h5>
-                <div>
-                    <p class="width40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div>Points</div>
-                    <div class="points">30 Points</div>
-                    <div class="margin-20 top">Required Time</div>
-                    <div class="points">10 Minutes</div>
-                    <button class="btn btn-primary margin20">START <img
-                            src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
-                </div>
+                <ng-container *ngIf="quizStage === 1">
+                    <div class="quiz-home">
+                        <h5>Test your knowledge</h5>
+                        <div>
+                            <p class="width40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <div>Points</div>
+                            <div class="points">30 Points</div>
+                            <div class="margin-20 top">Required Time</div>
+                            <div class="points">10 Minutes</div>
+                            <button class="btn btn-primary margin20" (click)="quizStage = 2">START <img
+                                    src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="quizStage === 2">
+                    <h5>Quiz</h5>
+                    <!-- <progress id="file" value="32" max="100"> 32% </progress> -->
+                    <div class="progress">
+                        <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    <div class="out-of-quiz">Question 2 of 12</div>
+                    <h5 class="margin-10 top bottom">What does HTML stands for?</h5>
+                    <div class="margin-10 top bottom">
+                        <div class="form-check mb-15">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label margin-10 left" for="exampleRadios1">
+                                Home Tool Markup Language
+                            </label>
+                        </div>
+                        <div class="form-check mb-15">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label margin-10 left" for="exampleRadios1">
+                                Home Tool Markup Language
+                            </label>
+                        </div>
+                        <div class="form-check mb-15">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label margin-10 left" for="exampleRadios1">
+                                Home Tool Markup Language
+                            </label>
+                        </div>
+                        <div class="form-check mb-15">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1">
+                            <label class="form-check-label margin-10 left" for="exampleRadios1">
+                                Home Tool Markup Language
+                            </label>
+                        </div>
+                    </div>
+                    <div class="text-right"><button class="btn btn-primary" (click)="quizStage = 3">NEXT <img
+                                src="../../../assets/icons/arrow-forward-outline.svg" width="15"></button></div>
+                </ng-container>
+                <ng-container *ngIf="quizStage === 3">
+                    <h5>Quiz</h5>
+                    <!-- <progress id="file" value="32" max="100"> 32% </progress> -->
+                    <div class="progress">
+                        <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    <div class="out-of-quiz">Completed</div>
+                    <h5 class="margin-20 top bottom text-center">Great job, you passed!</h5>
+                    <div class="text-center margin-20 top bottom"><img src="../../../../../assets/icons/quiz-c.png" width="100"></div>
+                    <div class="text-center">
+                        <h4>8/<span class="opacity-2">12</span> </h4>
+                        <div class="cr">CORRECT ANSWERS</div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-outline-primary text-left">REVIEW ANSWERS
+                        </button>
+                        <button class="btn btn-primary">NEXT <img src="../../../assets/icons/arrow-forward-outline.svg"
+                                width="15">
+                        </button>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>
-    <div class="text-center text-small"><button class="btn btn-primary margin-10 right" (click)="addTask()">+</button>Add Task</div>
-</div> 
+</div>
