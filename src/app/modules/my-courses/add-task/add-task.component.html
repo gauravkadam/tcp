@@ -14,7 +14,7 @@
     <div class="menu-container">
         <ul>
             <li routerLink="/my-courses/mycourses-list">
-                <label class="color-black back-to-lesson"> <b>BACK TO LESSONS</b></label>
+                <label class="color-black back-to-lesson"> <img class="pull-left rotate-90" src="../../../../assets/icons/chevron-down-outline.svg" alt=""> <b>BACK TO LESSONS</b></label>
             </li>
             <hr>
             <li class="lessons">
@@ -22,9 +22,23 @@
                 <label>CSS & WEBSITE LAYOUT</label>
             </li>
             <hr>
+            <li class="margin-15" >
+                <div class="dropdown text-center">
+                    <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        +
+                    </button> <span class="font-small margin-10 left color-black">Add an element</span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" (click)="makeEditTaskVisible()">Add a Task</a>
+                        <a class="dropdown-item">Add a Resourse</a>
+                      
+                    </div>
+                </div>
+            </li>
+            <hr>
             <li class="margin-15" (click)="openTasks()">
                 <div>
-                    <label class="width90"><b>Tasks</b><img class="pull-right" [ngClass]="{'rotate-up' : isTaskPanelOpen}" src="../../../../assets/icons/chevron-down-outline.svg" alt=""></label>
+                    <label class="width90"><b>Tasks</b><img class="pull-right margin-5 top" [ngClass]="{'rotate-up' : isTaskPanelOpen}" src="../../../../assets/icons/chevron-down-outline.svg" alt=""></label>
                 </div>
             </li>
             <hr>
@@ -198,12 +212,29 @@
                         <option [value]="'addClass'">Class</option>
                     </select>
                 </div>
+                <div *ngIf="taskType === 'addClass'" class="margin-10 top">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Attendance code
+                    </label>
+                    <div class="form-check margin-10 top shadow">
+                        <input class="" type="checkbox" value="" id="defaultCheck1">
+                        <label class="text-color margin-10 left margin-5 top">Students need attendance code</label>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Points</label>
                     <select class="form-control text-color font-small" id="exampleFormControlSelect1">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
+                    </select>
+                </div>
+                <div *ngIf="taskType === 'addQuiz'" class="form-group">
+                    <label for="exampleFormControlSelect1">Correct answers needed</label>
+                    <select class="form-control text-color font-small" id="exampleFormControlSelect1">
+                        <option>10%</option>
+                        <option>20%</option>
+                        <option>30%</option>
                     </select>
                 </div>
                 <div>
@@ -215,7 +246,7 @@
                     </label>
                     <div class="form-check margin-10 top shadow">
                         <input class="" type="checkbox" value="" id="defaultCheck1">
-                        <label class="text-color margin-10 left">Complete previous task</label>
+                        <label class="text-color margin-10 left margin-5 top">Complete previous task</label>
                     </div>
                 </div>
                 <div class="margin-10 top bottom">
