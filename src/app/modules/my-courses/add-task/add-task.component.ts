@@ -8,7 +8,7 @@ import { FormBuilder, FormArray } from '@angular/forms';
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.scss']
 })
-export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class AddTaskComponent implements OnInit, AfterViewChecked {
 
   constructor(private service: MyCourseService, private fb: FormBuilder) { }
 
@@ -72,6 +72,7 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
     }
   }
 
+
   ngOnInit(): void {
     this.taskType = 'addQuiz';
     this.questionForm = this.fb.group({
@@ -97,15 +98,17 @@ export class AddTaskComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   uploadFile() {
+    this.fileElement = document.getElementById('upload-file');
+    this.fileElement.click();
+  }
+
+  uploadPDF(){
+    this.fileElement = document.getElementById('upload-PDF');
     this.fileElement.click();
   }
 
   uploadText() {
     this.addText = true;
-  }
-
-  ngAfterViewInit() {
-    this.fileElement = document.getElementById('upload-file');
   }
 
   ngAfterViewChecked() {

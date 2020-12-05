@@ -71,8 +71,8 @@
         cursor: pointer;
     }
 
-    #upload-file {
-        display: none;
+    #upload-file, #upload-PDF {
+        visibility: hidden;
     }
 
     .margintb {
@@ -286,28 +286,41 @@
     margin-top: -5px !important;
 }
 
-.task-icon{
+.task-icon {
     border: 1px solid black;
     padding: 5px;
     box-sizing: content-box;
     border-radius: 50%;
 }
 
-.width90{
+.width90 {
     width: 90%;
 }
 
-.rotate-up{
+.rotate-up {
     transform: rotate(180deg);
     transition: .5s;
 }
 
-.rotate-90{
+.rotate-90 {
     transform: rotate(90deg);
     margin-top: 3px;
     margin-right: 5px;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     font-size: 12px;
+}
+
+.sort {
+    display: flex;
+    justify-content: space-between;
+}
+
+.red {
+    color: #ca2b2b;
+}
+
+.width100{
+    width: 100%;
 }
