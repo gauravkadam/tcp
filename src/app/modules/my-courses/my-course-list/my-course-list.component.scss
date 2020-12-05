@@ -23,7 +23,7 @@
             .author {
                 font-size: small;
                 font-weight: 200;
-                margin: 15px 0;
+                margin: 10px 0;
                 display: flex;
                 align-items: center;
             }
@@ -84,10 +84,46 @@
         margin-top: 30px;
     }
 
-    .add-lesson{
-            box-shadow: 4px 0px 8px #2D343614;
-            font-size: x-small;
-            margin-top: 30px;
-            padding: 40px;
+    .add-lesson {
+        box-shadow: 4px 0px 8px #2D343614;
+        font-size: x-small;
+        margin-top: 30px;
+        padding: 40px;
     }
 }
+
+small {
+    font-size: 10px;
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    border: none !important;
+
+}
+
+.nav-tabs .nav-item {
+    font-size: 12px;
+}
+
+.course-desc {
+    font-size: 13px;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+.padding-l0 {
+    padding-left: 0;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border: none;
+}
+
+.nav-link{
+    color: #bdacac;
+}
+

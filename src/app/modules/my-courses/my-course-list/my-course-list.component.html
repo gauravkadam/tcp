@@ -3,13 +3,33 @@
     <div class="my-courses">
         <div class="h3-text status">
             <div class="flex"><h3>Web Development for beginners</h3><h3 class="margin-10 left gray">Fall 2020</h3></div>
-            <div class="author"><img src="../../../../assets/icons/user.png" alt="user" width="20"> <span class="margin-10 left">Json Hunt</span></div>
+            <div class="author"><img src="../../../../assets/icons/user.png" alt="user" width="25"> <span class="margin-10 left">Json Hunt</span></div>
+            <small class="margin-5 bottom">No students yet</small>
+
             <p class="text-small margin-top-35">
                 <span><span class="dot"></span>0 Lessons</span>
                 <span class="margin-20 left right"><span class="dot"></span>0 Tasks</span>
                 <span><span class="dot"></span>Beginner Level</span>
         </p>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active padding-l0" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">ABOUT THIS COURSE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">TEACHER</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <p class="course-desc">Course details come here</p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p class="course-desc">Teacher details come here</p>
+                </div>
+        
+          </div>
         </div>
+        
         <div class="h3-text course-img">
             <img src="../../../../assets/icons/course.png" alt="">
             <div class="alignment font-10 margin-20 top">
@@ -21,6 +41,7 @@
             <div class="alignment font-10 opac">
                 <span>Start: 01/02/2020</span><span>End: 01/02/2020</span>
             </div>
+            <div class="text-right margin-20 top bottom"><button class="btn btn-primary" disabled>PUBLISH</button></div>
         </div>
     </div>
     <img class="img-idea" src="../../../../assets/icons/idea.png" alt="" width="70">
