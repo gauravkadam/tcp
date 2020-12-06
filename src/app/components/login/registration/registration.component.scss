@@ -1,0 +1,80 @@
+
+.register-container {
+    margin: auto;
+    width: 60%;
+    .caption-header { 
+        margin: 40px 30%;  
+        font: normal normal normal 44px/58px Roboto;
+        .caption {
+            color: #00B794;
+        }
+        .steps {
+            color: #0869B6;
+            margin-left: -10px;
+        }
+    }
+    
+    .sign-in {
+        margin-left: 10%;
+        .details-text{
+            display: block;
+            font-size: 24px;
+        }
+        .header-label {
+            display: block;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+        .user-label {
+            font-size: 14px;
+        }
+        .user-name {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 0px 20px #2D343614;
+            border: 1px solid #DFE6E8;
+            border-radius: 12px;
+            display: block;
+            width: 70%;
+            height: 40px;
+            font-size: 16px;
+            padding-left: 15px;
+        }
+        .password {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 0px 20px #2D343614;
+            border: 1px solid #DFE6E8;
+            border-radius: 12px;
+            display: block;
+            width: 70%;
+            height: 40px;
+            font-size: 16px;
+            padding-left: 20px;
+        }
+        .submit-btn {
+            width: 20%;
+            height: 45px;
+            text-align: center;
+            font: normal normal medium 16px/21px Roboto;
+            letter-spacing: 1.92px;
+            color: #FFFFFF;
+            margin-left: 30%;
+            box-shadow: 0px 0px 20px #0A83E314;
+            border-radius: 12px;
+            margin-top: 30px;
+            background: var(---0a83e3-main-blue) 0% 0% no-repeat padding-box;
+            background: #0A83E3 0% 0% no-repeat padding-box;
+            margin-bottom: 40px;
+        }
+        .error-msg {
+            color: red;
+            display: block;
+        }
+        .submit-disabled {
+            opacity: .4;
+        }
+        label {
+            margin-top: 10px;
+        }
+    }
+}
+

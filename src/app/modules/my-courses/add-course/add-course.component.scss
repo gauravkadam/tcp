@@ -1,76 +1,88 @@
 .container {
-    padding: 50px 100px;
-    box-sizing: border-box;
-    width: 75%;
-    background: #FCFEFF 0% 0% no-repeat padding-box;
-    margin-left: 0;
-    margin-top: 50px;
+    margin: 50px;
+    display: flex;
+    .course-section {
+        flex-grow: .8;
+        padding: 20px 40px;        
+        .end-date{
+            margin-right: 0 !important;
+        }
 
-    .course-header {
-        font-weight: 500;
-    }
+        .custom-item-field {
+            width: 100%;
+            display: block;
 
-    .semester{
-       width: 150px;
-       display: inline-block;
-    }
-    .start-year{
-        width: 153px;
-        display: inline-block;
-     }
-     .start-date{
-        width: 185px;
-        display: inline-block;
-     }
-     .end-date{
-        width: 150px;
-        display: inline-block;
-     }
+            .icon.calendar {
+               &.custom-calendar {
+                  top: -38px;
+                  cursor: not-allowed;
+               }
+            }
+         }
+        .course-type {
+            width: 22%;
+            margin-right: 22px;
+            display: inline-block;
+        }
+        
+        .course-name {
+            width: 69%;
+            float: left;
+            background-color: white;   
+            box-shadow: 0px 4px 16px #455B6314;
+            border-radius: 12px;
+            padding: 10px 20px;
+        }
+        .course-level {
+            width: 27%;
+            background-color: white; 
+            box-shadow: 0px 4px 16px #455B6314;
+            border-radius: 12px;
+            padding: 10px 20px;
+            float: right;
+        }
+        .teacher-container {         
+            box-shadow: 0px 4px 16px #455B6314;
+            border-radius: 12px;
+        }
 
-    .date-section {
-        display: inline-block;
-        input {
-            height: 26px;
-            width: 172px;
-            border: 1px solid grey;
-            color: grey;
+        .category {
+            width: 73%;
+            display: inline-block;
+        }
+        hr {
+            margin: 5px;
+            border-color: #f7f4f4;
         }
     }
-    .course-type {
-        width: 140px;
-        color: gray;
-        margin-right: 10px;
-    }
-       
-    .course-name {
-        width: 69%;
-        float: left;
-        background-color: white;   
-        box-shadow: 0px 4px 16px #455B6314;
-        border-radius: 12px;
-        padding: 10px 20px;
-    }
-    .course-level {
-        width: 27%;
-        background-color: white; 
-        box-shadow: 0px 4px 16px #455B6314;
-        border-radius: 12px;
-        padding: 10px 20px;
-        float: right;
-    }
-    .teacher-container {         
-        box-shadow: 0px 4px 16px #455B6314;
-        border-radius: 12px;
-    }
 
-    .category {
-        width: 485px;
-        display: inline-block;
+    .cover-image {
+        flex-grow: .1;
+        padding: 50px;
+        .img-section {
+            box-shadow: 0px 1px 5px 2px #2D343614 !important;
+            height: 200px;
+            margin-bottom: 20px;
+            .image-icon {                            
+                padding: 10px 64px;
+            }
+            hr {
+                margin-top: 8rem;
+            }
+            .select-cover {                            
+                float: right;
+                margin-right: 20px;
+            }
+        }
+        
+        .publish-section  {
+            box-shadow: 0px 1px 5px 2px #2D343614 !important;
+            padding: 10px;    
+            .actions{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+        }
     }
-    .save-btn {
-        margin: 12% 50%;
-        display: inline-block;
-    }
-
-
 }

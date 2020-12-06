@@ -1,5 +1,41 @@
 <div class="container">
-    <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label class="margin-5 left"> ADD NEW LESSON</label></div>
-    <button routerLink="/my-courses/add-task" [queryParams]="{addTask:true}">SAVE</button>
+   <div class="lesson-section">      
+   <div class="text-small">
+      <img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label
+      class="margin-5 left"> ADD NEW LESSON</label></div>
+      <form>
+         <div class="form-group">
+            <label for="course-title">Lesson title</label>
+            <input teacher-container type="text" class="form-control" id="course-name" aria-describedby="titleHelp"
+               placeholder="CSS and website Layout">
+         </div>
+         <div class="form-group ">
+            <label for="course-title">Description</label>
+            <textarea teacher-container type="text" class="form-control" id="course-description"
+               aria-describedby="courseDesc" placeholder="Lesson description" rows="4"> </textarea>
+         </div>
+      </form>
+   </div>
+   <div class="lesson-image">        
+      <label for="">Lesson image</label>  
+      <div class="img-section">
+         <div class="image-icon ">
+            <img src="../../../assets/icons/course.png" class="rounded float-left"  width="120" height="120px">
+         </div>
+         <hr>
+         <div class="select-cover"><a href="">Select a cover</a></div>
+      </div>  
+      <div>
+         <label for="">Publish</label>
+         <div class="publish-section">
+            <div><label class="text-color">Status: </label> <label class="margin-10 left right">Draft</label> <a href="">Edit</a></div>
+            <div><label class="text-color">Last Update: </label> <label class="margin-10 left right">09/14/2020</label></div>
+            <hr>
+            <div class="actions">
+               <a href="">Cancel</a>
+               <button routerLink="/my-courses/add-task" [queryParams]="{addTask:true}" class="btn btn-primary">Save</button>
+            </div>
+         </div>
+      </div>        
+   </div>
 </div>
-

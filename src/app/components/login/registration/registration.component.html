@@ -1,0 +1,30 @@
+<div class="register-container">
+   <div class="caption-header">
+      <span class="caption">Tech </span>
+      <span class="steps">Steps</span>
+   </div>
+   <section class="sign-in">
+      <span class="details-text">Register to TechSteps</span>
+      <span class="header-label">Enter your details below</span>
+      <label>First Name</label>
+      <input class="user-name" type="text" [(ngModel)]="firstName" name="first-name"
+         (ngModelChange)="firstNameChange(firstName)" ngModel email />
+      <label>Last Name</label>
+      <input class="user-name" type="text" [(ngModel)]="lastName" name="last-name"
+         (ngModelChange)="lastNameChange(lastName)" ngModel email />         
+      <label>Enter email id</label>
+      <input class="user-name" type="email" [(ngModel)]="username" name="username"
+         (ngModelChange)="onEmailChange(username)" ngModel email />
+      <span class="error-msg" *ngIf="isValidMail">Please enter valid email</span>
+      <label>Password</label>
+      <input class="password" type="password" [(ngModel)]="password" minlength="5" maxlength="16" name="password"
+         (ngModelChange)="onPassChange(password)" value="" />
+      <span class="error-msg" *ngIf="isValidPassword">Please enter valid password</span>      
+      <label>Confirm password</label>
+      <input class="password" type="password" [(ngModel)]="confpassword" minlength="5" maxlength="16" name="password"
+         (ngModelChange)="onConfirmPassChange(confpassword)" value="" />
+      <span class="error-msg" *ngIf="isValidConfPassword">Password is not matching</span>
+      <button class="submit-btn" [disabled]="!isValidData" (click)="register()"
+         [ngClass]="{'submit-disabled' : !isValidData}"> Register</button>
+   </section>
+</div>

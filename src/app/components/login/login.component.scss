@@ -1,0 +1,54 @@
+.login-conatainer {
+	.left-section {
+		width: 24%;
+		display: inline-block;
+		.tech-steps {
+			padding: 40px;
+			color: #FFFFFF;
+		}
+		.header {    
+			font-size: 24px;
+			text-align: center;
+			margin-top: 45%;
+			display: block;
+			color: #FFFFFF;
+		}
+		.sub-header {
+			padding: 10px 0 20px;
+			font-size: 18px;
+			width: 260px;
+			margin: auto;
+			display: block;
+			text-align: center;
+			color: #FFFFFF;
+		}
+		.learn-more {
+			padding: 5px;
+			font-size: 14px;
+			width: 100px;
+			color: #FFFFFF;
+			margin: auto;
+			display: block;
+			text-align: center;
+			border: 1px solid gray;
+		}
+		.registration-link{
+			font-size: 18px;
+			margin-top: 55%;
+			text-align: center;
+			color: white;
+			margin-bottom: 10px;
+			.reg-link {
+				border-bottom: 1px solid gray;
+				cursor: pointer;
+			}
+		}
+	}
+	
+	.right-section {
+	   width: 74%;
+		display: inline-block;
+		position: absolute;
+	}
+}
+

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
+
 @Component({
    selector: 'app-add-course',
    templateUrl: './add-course.component.html',
@@ -11,11 +14,13 @@ export class AddCourseComponent implements OnInit {
    courseLevel = ['Beginner', 'Intermediate', 'Advanced'];
    currentYear: number;
    yearsList = [];
+
    constructor() { }
 
    ngOnInit(): void {
       const years = new Date().getFullYear();
       this.getYears(years);
+
    }
 
    getYears(year: number) {
@@ -23,6 +28,10 @@ export class AddCourseComponent implements OnInit {
          this.yearsList.push(year);
          year++;
       }
+   }
+
+   setDate(value) {
+     console.log(value);
    }
 
 }

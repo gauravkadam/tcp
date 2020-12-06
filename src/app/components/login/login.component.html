@@ -1,2 +1,26 @@
-<p>login works!</p>
-<button routerLink="/my-courses"> Login</button>
+<div class="login-conatainer">
+   <div class="left-section">
+      <div [style.background-image]="currImage">
+         <p class="tech-steps">TechSteps</p>
+         <span class="header">Taking your career to the next step</span>
+         <span class="sub-header">Free tech courses, certifications and access to great jobs.</span>
+         <span class="learn-more">Learn more</span>
+         <div class="registration-link">
+            <span *ngIf="isSignInPage else showSignInLink">
+               Don’t have an account? <span class="reg-link" (click)="gotoRegistrationPage()">Get started</span>
+            </span>
+            <ng-template #showSignInLink>
+               Have an account? <span class="reg-link" (click)="gotoSignIn()">Sign In</span>
+            </ng-template>
+         </div>
+      </div>
+   </div>
+   <div class="right-section">
+      <div *ngIf="isSignInPage else registration">
+         <app-sign-in></app-sign-in>
+      </div>
+      <ng-template #registration>
+         <app-registration (signInPage)="gotoSignIn1($event)"></app-registration>
+      </ng-template>
+   </div>
+</div>

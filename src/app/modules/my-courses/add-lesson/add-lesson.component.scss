@@ -1,7 +1,39 @@
-.container {
-    padding: 20px 50px;
-    box-sizing: border-box;
-    margin-top: 30px;
-    width: 75%;
-    margin: 50px;
+.container {    
+    margin: 47px;
+    display: flex;
+    .lesson-section {
+        flex-grow: .9;
+        padding: 20px 40px; 
+    }
+
+    .lesson-image{
+        flex-grow: .1;
+        width: 200px;
+        margin: 50px;
+        .img-section {
+            box-shadow: 0px 1px 5px 2px #2D343614 !important;
+            height: 200px;
+            margin-bottom: 20px;
+            .image-icon {                            
+                padding: 10px 64px;
+            }
+            hr {
+                margin-top: 8rem;
+            }
+            .select-cover {                            
+                float: right;
+                margin-right: 20px;
+            }
+        }
+        
+        .publish-section  {
+            box-shadow: 0px 1px 5px 2px #2D343614 !important;
+            padding: 10px;    
+            .actions{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+        }
+    }
 }
