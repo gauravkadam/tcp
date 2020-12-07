@@ -31,4 +31,16 @@
             font-weight: 200;
         }
     }
+
+    .sort{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .my{
+        font-size: small;
+        cursor: pointer;
+        color: #064F89;
+    }
 }

@@ -34,14 +34,32 @@
 
     .course-image {
         padding: 0 30px 0 40px;
-   }
+    }
 
     sub {
         font-size: xx-small;
         opacity: .5;
     }
 
-    .go-btn{
+    .go-btn {
         margin-left: 100px;
     }
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.create{
+    font-size: 11px;
+    margin-right: 5px;
+    color: #0a83e3;
+}
+
+.today{
+    color: #064f89;
 }

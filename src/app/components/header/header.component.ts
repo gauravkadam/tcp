@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   public isCollapse: boolean;
+  public title: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: SharedService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(res => {
@@ -18,6 +20,7 @@ export class HeaderComponent implements OnInit {
        this.isCollapse = true;
      }
     });
+    this.title = this.service.activeHeaderTitle;
   }
 
   

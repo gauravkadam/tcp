@@ -12,6 +12,7 @@ export class DuplicateCoursePanelComponent implements OnInit {
   constructor(private sharedService:SharedService, private router: Router) { }
 
   ngOnInit(): void {
+    this.sharedService.activeHeaderTitle = 'ADD A NEW COURSE';
   }
   public onCreateCourse(data){
     this.sharedService.setSideMenuCollapse(true);

@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class SharedService {
 
   public sideMenuCollapse = new Subject<boolean>();
+  public activeHeaderTitle: string;
 
   constructor() { }
 

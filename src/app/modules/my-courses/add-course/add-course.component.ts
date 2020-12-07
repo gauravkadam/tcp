@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 
@@ -15,11 +16,12 @@ export class AddCourseComponent implements OnInit {
    currentYear: number;
    yearsList = [];
 
-   constructor() { }
+   constructor(private sharedService:SharedService) { }
 
    ngOnInit(): void {
       const years = new Date().getFullYear();
       this.getYears(years);
+      this.sharedService.activeHeaderTitle = 'ADD A NEW COURSE';
 
    }
 

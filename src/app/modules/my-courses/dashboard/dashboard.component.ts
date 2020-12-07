@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
   public activityData = {
     time: '4PM - 5PM',
@@ -28,4 +28,7 @@ export class DashboardComponent {
     this.router.navigate(['/my-courses/duplicate-course'])
   }
 
+  public ngOnInit(){
+    this.sharedService.activeHeaderTitle = 'MY COURSES';
+  }
 }

@@ -127,7 +127,6 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
   }
 
   addQuestion() {
-
     this.questionArray.push({
       question: '',
       editable: false,
@@ -135,6 +134,11 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
     });
     this.openAnswerPanel(this.questionArray.length - 1);
     this.questionForm.reset();
+  }
+
+  copyQuestion(index){
+    this.questionArray.push({...this.questionArray[index]});
+    this.openAnswerPanel(index + 1);
   }
 
   submitQuestion(i) {

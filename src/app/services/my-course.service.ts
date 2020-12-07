@@ -13,7 +13,7 @@ export class MyCourseService {
   constructor(private http: HttpClient) { }
 
   addQuizTask(params) {
-    return this.http.post(`${environment.host}api/task/addlesson`, params)
+    return this.http.post(`${environment.host}api/Lesson/addlesson`, params)
   }
 
   public setViewTask(value) {
