@@ -37,6 +37,10 @@ const routes: Routes = [
     loadChildren: () => import('../app/components/login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'admin',
+    loadChildren: () => import('../app/modules/admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: 'logout',
     redirectTo: '/login'
   },
