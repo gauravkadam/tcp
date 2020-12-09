@@ -16,16 +16,16 @@
         &.collapse-menu {
             width: max-content;
 
-            li{
+            li {
                 display: block;
                 text-align: right;
 
 
                 div {
-                    &.profile{
-                      left: 60%;
+                    &.profile {
+                        left: 60%;
 
-                        img{
+                        img {
                             border: none;
                             width: 40px;
                             height: 40px;
@@ -101,18 +101,18 @@
         &.add-task {
             margin-top: -20px;
 
-            .lession-name{
+            .lession-name {
                 display: flex;
                 flex-direction: column;
                 padding: 20px 0;
             }
 
-            li{
+            li {
                 border-bottom: 1px solid lightgray;
                 padding: 5px;
             }
 
-            .tasks{
+            .tasks {
                 display: flex;
                 flex-direction: column;
             }
@@ -125,5 +125,17 @@
         margin: 0;
         padding: 20px;
         height: 100vh;
+    }
+
+    .collapse-setting {
+        position: absolute;
+        bottom: 8%;
+        margin-left: 20px !important;
+    }
+
+    .collapse-logout {
+        position: absolute;
+        bottom: 2%;
+        margin-left: 20px !important;
     }
 }
