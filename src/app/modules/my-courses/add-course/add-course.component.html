@@ -1,33 +1,35 @@
-<div class="container">
+<div class="containers">
    <div class="course-section">      
    <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label
       class="margin-5 left"> ADD NEW COURSE</label></div>
-      <form >
+      <form  class="label-size">
          <div class="form-group">
             <label class="course-header" for="course-title">Course title</label>
             <input teacher-container type="text" class="form-control" id="course-name" aria-describedby="titleHelp"
                placeholder="Course name">
          </div>
-         <div class="form-group course-type">
-            <label for="exampleFormControlSelect1">Semester</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-               <option value="Full">Full</option>
-               <option value="part">Part</option>
-            </select>
-         </div>
-         <div class="form-group course-type">
-            <label for="exampleFormControlSelect2">Year</label>
-            <select class="form-control" id="exampleFormControlSelect2">
-               <option value="year" *ngFor="let year of yearsList">{{year}}</option>
-            </select>
-         </div>
-         <div class="form-group course-type">
-            <label for="exampleFormControlSelect2">Start Date</label>
-            <input type="date" class="form-control" id="start-date" placeholder="start date">
-         </div>
-         <div class="form-group course-type end-date">
-            <label for="exampleFormControlSelect2">End Date</label>
-            <input type="date" class="form-control" id="end-date" placeholder="end date">
+         <div class="sort">
+               <div class="form-group course-type">
+                     <label for="exampleFormControlSelect1">Semester</label>
+                     <select class="form-control" id="exampleFormControlSelect1">
+                        <option value="Full">Full</option>
+                        <option value="part">Part</option>
+                     </select>
+                  </div>
+                  <div class="form-group course-type">
+                     <label for="exampleFormControlSelect2">Year</label>
+                     <select class="form-control" id="exampleFormControlSelect2">
+                        <option value="year" *ngFor="let year of yearsList">{{year}}</option>
+                     </select>
+                  </div>
+                  <div class="form-group course-type">
+                     <label for="exampleFormControlSelect2">Start Date</label>
+                     <input type="date" class="form-control" id="start-date" placeholder="start date">
+                  </div>
+                  <div class="form-group course-type end-date">
+                     <label for="exampleFormControlSelect2">End Date</label>
+                     <input type="date" class="form-control" id="end-date" placeholder="end date">
+                  </div>
          </div>
 
          <div class="form-group ">
@@ -40,7 +42,7 @@
             <textarea teacher-container type="text" class="form-control" id="teacher-name"
                placeholder="About the teacher" rows="4"> </textarea>
          </div>
-         <div class="course-header">
+         <div class="option-header">
             <span class="category">Category</span>
             <span>Course level</span>
          </div>

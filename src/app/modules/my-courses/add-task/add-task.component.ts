@@ -74,7 +74,7 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit(): void {
-    this.taskType = 'addQuiz';
+    this.taskType = 'addReading';
     this.questionForm = this.fb.group({
       question: [''],
       answers: this.fb.array([

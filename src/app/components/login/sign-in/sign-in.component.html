@@ -6,17 +6,17 @@
 	<section class="sign-in">
 		<span class="details-text">Sign in to TechSteps</span>
 		<span class="header-label">Enter your details below</span>		
-		<label>Email id</label> 
+		<label>Email address</label> 
       <input class="user-name" type="email"[(ngModel)]="username" name="username"
        (ngModelChange)="onEmailChange(username)" ngModel email /> 
 		<span class="error-msg" *ngIf="isValidMail">Please enter valid email</span>				
-		<label>Password</label> 
+		<label style="margin-top: 15px;">Password</label> 
 		<input class="password" type="password"  [(ngModel)]="password" minlength="5" maxlength="16"  name="password" (ngModelChange)="onPassChange(password)" value="" />
 		<span class="error-msg" *ngIf="isValidPassword">Please enter valid password</span>
       <button class="submit-btn" [disabled]="!isValidData" (click)="submit()"
-      [ngClass]="{'submit-disabled' : !isValidData}"> SIGN IN</button>
+	  [ngClass]="{'submit-disabled' : !isValidData}"> SIGN IN</button>
    </section>
 </div>
 <div class="footer-icons">
-   <img src="../../../assets/footer.jpeg" width="100%" height="120">
+   <img src="../../../assets/footer.jpeg" width="100%" height="120" style="cursor: pointer;">
 </div>

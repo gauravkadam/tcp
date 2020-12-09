@@ -12,10 +12,10 @@ const routes: Routes = [
     path: 'my-courses',
     loadChildren: () => import('./modules/my-courses/my-courses.module').then(m => m.MyCoursesModule)
   },
-  {
-    path: 'forum',
-    loadChildren: () => import('../app/modules/forum/forum.module').then(m => m.ForumModule)
-  },
+  // {
+  //   path: 'forum',
+  //   loadChildren: () => import('../app/modules/forum/forum.module').then(m => m.ForumModule)
+  // },
   {
     path: 'my-students',
     loadChildren: () => import('../app/modules/my-students/my-students.module').then(m => m.MyStudentsModule)
@@ -36,10 +36,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('../app/components/login/login.module').then(m => m.LoginModule)
   },
-  {
-    path: 'admin',
-    loadChildren: () => import('../app/modules/admin/admin.module').then(m => m.AdminModule)
-  },
+  // {
+  //   path: 'admin',
+  //   loadChildren: () => import('../app/modules/admin/admin.module').then(m => m.AdminModule)
+  // },
   {
     path: 'logout',
     redirectTo: '/login'

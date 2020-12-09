@@ -1,10 +1,12 @@
-.container {
+.containers {
     margin: 50px;
     display: flex;
+
     .course-section {
         flex-grow: .8;
-        padding: 20px 40px;        
-        .end-date{
+        padding: 20px 8%;
+
+        .end-date {
             margin-right: 0 !important;
         }
 
@@ -13,35 +15,38 @@
             display: block;
 
             .icon.calendar {
-               &.custom-calendar {
-                  top: -38px;
-                  cursor: not-allowed;
-               }
+                &.custom-calendar {
+                    top: -38px;
+                    cursor: not-allowed;
+                }
             }
-         }
+        }
+
         .course-type {
             width: 22%;
             margin-right: 22px;
             display: inline-block;
         }
-        
+
         .course-name {
             width: 69%;
             float: left;
-            background-color: white;   
+            background-color: white;
             box-shadow: 0px 4px 16px #455B6314;
             border-radius: 12px;
             padding: 10px 20px;
         }
+
         .course-level {
             width: 27%;
-            background-color: white; 
+            background-color: white;
             box-shadow: 0px 4px 16px #455B6314;
             border-radius: 12px;
             padding: 10px 20px;
             float: right;
         }
-        .teacher-container {         
+
+        .teacher-container {
             box-shadow: 0px 4px 16px #455B6314;
             border-radius: 12px;
         }
@@ -50,6 +55,7 @@
             width: 73%;
             display: inline-block;
         }
+
         hr {
             margin: 5px;
             border-color: #f7f4f4;
@@ -59,30 +65,52 @@
     .cover-image {
         flex-grow: .1;
         padding: 50px;
+
         .img-section {
             box-shadow: 0px 1px 5px 2px #2D343614 !important;
             height: 200px;
             margin-bottom: 20px;
-            .image-icon {                            
+
+            .image-icon {
                 padding: 10px 64px;
             }
+
             hr {
                 margin-top: 8rem;
             }
-            .select-cover {                            
+
+            .select-cover {
                 float: right;
                 margin-right: 20px;
             }
         }
-        
-        .publish-section  {
+
+        .publish-section {
             box-shadow: 0px 1px 5px 2px #2D343614 !important;
-            padding: 10px;    
-            .actions{
+            padding: 10px;
+
+            .actions {
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
             }
         }
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    .form-control {
+        font-size: 12px;
+    }
+
+    .option-header {
+        font-size: 12px;
+    }
+
+    .sort {
+        display: flex;
+        justify-content: space-between;
     }
 }

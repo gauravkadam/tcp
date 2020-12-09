@@ -3,7 +3,7 @@
     margin: auto;
     width: 60%;
     .caption-header { 
-        margin: 40px 30%;  
+        margin: 50px 30% 30px;
         font: normal normal normal 44px/58px Roboto;
         .caption {
             color: #00B794;
@@ -19,6 +19,7 @@
         .details-text{
             display: block;
             font-size: 24px;
+            font-weight: 600;
         }
         .header-label {
             display: block;
@@ -34,7 +35,7 @@
             border: 1px solid #DFE6E8;
             border-radius: 12px;
             display: block;
-            width: 70%;
+            width: 60%;
             height: 40px;
             font-size: 16px;
             padding-left: 20px;
@@ -45,7 +46,7 @@
             border: 1px solid #DFE6E8;
             border-radius: 12px;
             display: block;
-            width: 70%;
+            width: 60%;
             height: 40px;
             font-size: 16px;
             padding-left: 20px;
@@ -57,7 +58,7 @@
             font: normal normal medium 16px/21px Roboto;
             letter-spacing: 1.92px;
             color: #FFFFFF;
-            margin-left: 30%;
+            margin-left: 22%;
             box-shadow: 0px 0px 20px #0A83E314;
             border-radius: 12px;
             margin-top: 20px;
@@ -79,8 +80,9 @@
 
 label {
     margin-top: 10;
+    font-size: 12px;
 }
 
 .footer-icons{
-    margin-top: 66px;
+    margin-top: 70px;
 }

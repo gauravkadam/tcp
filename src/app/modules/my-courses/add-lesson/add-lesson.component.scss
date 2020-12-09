@@ -1,15 +1,16 @@
-.container {    
+.containerss {    
     margin: 47px;
     display: flex;
     .lesson-section {
         flex-grow: .9;
-        padding: 20px 40px; 
+        padding: 20px 8%; 
     }
 
     .lesson-image{
         flex-grow: .1;
         width: 200px;
         margin: 50px;
+        padding: 0 15px;
         .img-section {
             box-shadow: 0px 1px 5px 2px #2D343614 !important;
             height: 200px;
@@ -36,4 +37,12 @@
             }
         }
     }
+    
+    label {
+        font-size: 12px;
+    }
+
+    .form-control { 
+        font-size: 12px;
+     }
 }

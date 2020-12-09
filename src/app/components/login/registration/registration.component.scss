@@ -3,7 +3,7 @@
     margin: auto;
     width: 60%;
     .caption-header { 
-        margin: 40px 30%;  
+        margin: 52px 30% 30px;
         font: normal normal normal 44px/58px Roboto;
         .caption {
             color: #00B794;
@@ -15,7 +15,7 @@
     }
     
     .sign-in {
-        margin-left: 10%;
+        margin-left: 15%;
         .details-text{
             display: block;
             font-size: 24px;
@@ -75,6 +75,10 @@
         label {
             margin-top: 10px;
         }
+    }
+
+    label {
+        font-size: 12px;
     }
 }
 
