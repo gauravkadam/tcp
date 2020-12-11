@@ -87,7 +87,7 @@
                 <ng-container *ngSwitchCase="'addReading'">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Task Title</label>
+                            <label class="label-style">Task Title</label>
                             <input type="text" class="form-control font-small" id="exampleInputEmail1">
                         </div>
                     </form>
@@ -133,12 +133,12 @@
                 <ng-container *ngSwitchCase="'addClass'">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Task Title</label>
+                            <label class="label-style">Task Title</label>
                             <input type="email" class="form-control font-small" id="exampleInputEmail1">
                         </div>
                     </form>
                     <div class="margintb">
-                        <label>Element: Text</label>
+                        <label class="label-style">Element: Text</label>
                         <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
                     </div>
                 </ng-container>
@@ -146,11 +146,11 @@
                     <form>
                         <div class="quiz sort">
                             <div class="form-group title">
-                                <label for="exampleInputEmail1">Task Title</label>
+                                <label class="label-style">Task Title</label>
                                 <input type="email" class="form-control font-small" id="exampleInputEmail1">
                             </div>
                             <div class="form-group required-time">
-                                <label for="exampleInputEmail1">Required Time</label>
+                                <label class="label-style">Required Time</label>
                                 <select class="form-control text-color font-small" id="exampleFormControlSelect1">
                                     <option>10 min</option>
                                     <option>20 min</option>
@@ -160,11 +160,11 @@
                         </div>
                     </form>
                     <div class="margintb">
-                        <label>Element: Intro Text</label>
+                        <label class="label-style">Element: Intro Text</label>
                         <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
                     </div>
                     <div *ngIf="questionArray.length > 0">
-                        <label>Quiz</label>
+                        <label class="label-style">Quiz</label>
                         <ng-container *ngFor="let data of questionArray; let i=index">
                             <div class="question-panel font-small margin-10 top bottom"><span class="pointer"><svg
                                         (click)="openAnswerPanel(i)" width="16px" height="16px" viewBox="0 0 16 16"
@@ -252,7 +252,7 @@
         </div>
         <div class="task-type">
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Task Type</label>
+                <label class="label-style">Task Type</label>
                 <select [(ngModel)]="taskType" class="form-control text-color font-small"
                     id="exampleFormControlSelect1">
                     <option [value]="'addQuiz'">Quiz</option>
@@ -261,7 +261,7 @@
                 </select>
             </div>
             <div *ngIf="taskType === 'addClass'" class="margin-10 top">
-                <label class="form-check-label" for="defaultCheck1">
+                <label class="form-check-label label-style" for="defaultCheck1">
                     Attendance code
                 </label>
                 <div class="form-check margin-10 top shadow">
@@ -270,7 +270,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Points</label>
+                <label class="label-style">Points</label>
                 <select class="form-control text-color font-small" id="exampleFormControlSelect1">
                     <option>1</option>
                     <option>2</option>
@@ -278,7 +278,7 @@
                 </select>
             </div>
             <div *ngIf="taskType === 'addQuiz'" class="form-group">
-                <label for="exampleFormControlSelect1">Correct answers needed</label>
+                <label class="label-style">Correct answers needed</label>
                 <select class="form-control text-color font-small" id="exampleFormControlSelect1">
                     <option>10%</option>
                     <option>20%</option>
@@ -286,13 +286,13 @@
                 </select>
             </div>
             <div>
-                <label for="">Due date</label>
+                <label class="label-style">Due date</label>
                 <div class="form-group course-type end-date">
                     <input type="date" class="form-control date" id="end-date" placeholder="end date">
                  </div>
             </div>
             <div class="margin-10 top">
-                <label class="form-check-label" for="defaultCheck1">
+                <label class="form-check-label label-style" for="defaultCheck1">
                     Requirements
                 </label>
                 <div class="form-check margin-10 top shadow">
@@ -301,7 +301,7 @@
                 </div>
             </div>
             <div class="margin-10 top bottom">
-                <label for="">Publish</label>
+                <label class="label-style">Publish</label>
                 <div class="publish">
                     <div><label class="text-color">Status: </label> <label class="margin-10 left right">Draft</label> <a
                             href="">Edit</a></div>

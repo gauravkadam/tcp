@@ -1,50 +1,50 @@
 <div class="containers">
    <div class="course-section">      
    <div class="text-small"><img src="../../../../assets/icons/back-outline.svg" width="5" alt="Back"><label
-      class="margin-5 left"> ADD NEW COURSE</label></div>
+      class="margin-5 left page-side-header"> ADD NEW COURSE</label></div>
       <form  class="label-size">
          <div class="form-group">
-            <label class="course-header" for="course-title">Course title</label>
+            <label class="course-header label-style" for="course-title">Course title</label>
             <input teacher-container type="text" class="form-control" id="course-name" aria-describedby="titleHelp"
                placeholder="Course name">
          </div>
          <div class="sort">
                <div class="form-group course-type">
-                     <label for="exampleFormControlSelect1">Semester</label>
+                     <label class="label-style">Semester</label>
                      <select class="form-control" id="exampleFormControlSelect1">
                         <option value="Full">Full</option>
                         <option value="part">Part</option>
                      </select>
                   </div>
                   <div class="form-group course-type">
-                     <label for="exampleFormControlSelect2">Year</label>
+                     <label class="label-style">Year</label>
                      <select class="form-control" id="exampleFormControlSelect2">
                         <option value="year" *ngFor="let year of yearsList">{{year}}</option>
                      </select>
                   </div>
                   <div class="form-group course-type">
-                     <label for="exampleFormControlSelect2">Start Date</label>
+                     <label class="label-style">Start Date</label>
                      <input type="date" class="form-control" id="start-date" placeholder="start date">
                   </div>
                   <div class="form-group course-type end-date">
-                     <label for="exampleFormControlSelect2">End Date</label>
+                     <label class="label-style">End Date</label>
                      <input type="date" class="form-control" id="end-date" placeholder="end date">
                   </div>
          </div>
 
          <div class="form-group ">
-            <label class="course-header" for="course-title">Description</label>
+            <label class="course-header label-style" for="course-title">Description</label>
             <textarea teacher-container type="text" class="form-control" id="course-description"
                aria-describedby="courseDesc" placeholder="Course description" rows="4"> </textarea>
          </div>
          <div class="form-group">
-            <label class="course-header" for="course-title">About the Teacher</label>
+            <label class="course-header label-style" for="course-title">About the Teacher</label>
             <textarea teacher-container type="text" class="form-control" id="teacher-name"
                placeholder="About the teacher" rows="4"> </textarea>
          </div>
          <div class="option-header">
-            <span class="category">Category</span>
-            <span>Course level</span>
+            <span class="category label-style">Category</span>
+            <span class="label-style">Course level</span>
          </div>
          <div class="course-name">
             <div *ngFor="let course of courseNames">
@@ -65,7 +65,7 @@
       </form>
    </div>
    <div class="cover-image">          
-      <label for="">Cover image</label>  
+      <label class="label-style">Cover image</label>  
       <div class="img-section">
          <div class="image-icon ">
             <img src="../../../assets/icons/course.png" class="rounded float-left"  width="120" height="120px">
@@ -74,14 +74,14 @@
          <div class="select-cover"><a href="">Select a cover</a></div>
       </div>
       <div class="form-group">
-         <label for="exampleFormControlSelect3">Theme color</label>
+         <label class="label-style">Theme color</label>
          <select class="form-control" id="exampleFormControlSelect3">
             <option value="color">color: light blue</option>
             <option value="color">color: yellow</option>
          </select>
       </div>      
       <div>
-         <label for="">Publish</label>
+         <label class="label-style">Publish</label>
          <div class="publish-section">
              <div><label class="text-color">Status: </label> <label class="margin-10 left right">Draft</label> <a href="">Edit</a></div>
              <div><label class="text-color">Last Update: </label> <label class="margin-10 left right">09/14/2020</label></div>
