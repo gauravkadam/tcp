@@ -102,15 +102,17 @@
                         <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
                     </div>
                     <div [innerHtml]="htmlContent"></div>
-                    <div *ngIf="imgURL" class="text-center">
-                        <div class="sort"><label>Element: Image</label>
-                            <svg width="12px" height="12px" viewBox="0 0 16 16" class="bi bi-x-circle-fill pointer red"
-                                (click)="imgURL = false" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
-                            </svg>
-                        </div>
-                        <img class="margintb" [src]="imgURL" height="300" width="100%">
+                    <div *ngIf="imgURL.length > 0" class="text-center">
+                        <ng-container *ngFor="let img of imgURL; let i=index">
+                            <div class="sort"><label>Element: Image ({{i+1}} of 5)</label>
+                                <svg (click)="removeImg(i)" width="12px" height="12px" viewBox="0 0 16 16" class="bi bi-x-circle-fill pointer red"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                                </svg>
+                            </div>
+                            <img class="marginb30" [src]="img" height="300" width="100%">
+                        </ng-container>
                     </div>
                     <div class="dropdown text-center">
                         <svg data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" width="30px"
@@ -127,7 +129,7 @@
                             <a class="dropdown-item" (click)="uploadPDF()">Upload PDF</a>
                         </div>
                     </div>
-                    <input id="upload-file" #file type="file" accept='image/*' (change)="preview(file.files)" />
+                    <input id="upload-file" #file type="file" multiple accept='image/*' (change)="preview(file.files)" />
                     <input id="upload-PDF" #files type="file" accept='application/pdf' (change)="preview(file.files)" />
                 </ng-container>
                 <ng-container *ngSwitchCase="'addClass'">

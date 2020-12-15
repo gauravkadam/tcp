@@ -15,7 +15,7 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
   public htmlContent: any;
   public taskType: string;
   public imagePath;
-  public imgURL: any;
+  public imgURL = [];
   public message: string;
   public fileElement: any;
   public questionArray = [];
@@ -64,11 +64,15 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
       return;
     }
 
-    var reader = new FileReader();
     this.imagePath = files;
-    reader.readAsDataURL(files[0]);
-    reader.onload = (_event) => {
-      this.imgURL = reader.result;
+    if(files.length <= 5){
+      for(let i of files){
+        let reader = new FileReader();
+        reader.readAsDataURL(i);
+        reader.onload = (_event) => {
+          this.imgURL.push(reader.result);
+        }
+      }
     }
   }
 
@@ -189,6 +193,10 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
   makeEditTaskInvisible(){
     this.openTasks();
     this.isViewTask = false;
+  }
+
+  removeImg(i){
+    this.imgURL.splice(i,1);
   }
 
 }
