@@ -105,8 +105,9 @@
                     <div *ngIf="imgURL.length > 0" class="text-center">
                         <ng-container *ngFor="let img of imgURL; let i=index">
                             <div class="sort"><label>Element: Image ({{i+1}} of 5)</label>
-                                <svg (click)="removeImg(i)" width="12px" height="12px" viewBox="0 0 16 16" class="bi bi-x-circle-fill pointer red"
-                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <svg (click)="removeImg(i)" width="12px" height="12px" viewBox="0 0 16 16"
+                                    class="bi bi-x-circle-fill pointer red" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
                                 </svg>
@@ -117,7 +118,8 @@
                     <div class="dropdown text-center">
                         <svg data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" width="30px"
                             height="30px" (click)="addQuestion()" viewBox="0 0 16 16" class="bi bi-plus-circle-fill"
-                            style="color: #007bff; cursor: pointer;" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            style="color: #007bff; cursor: pointer;" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                         </svg>
@@ -129,7 +131,8 @@
                             <a class="dropdown-item" (click)="uploadPDF()">Upload PDF</a>
                         </div>
                     </div>
-                    <input id="upload-file" #file type="file" multiple accept='image/*' (change)="preview(file.files)" />
+                    <input id="upload-file" #file type="file" multiple accept='image/*'
+                        (change)="preview(file.files)" />
                     <input id="upload-PDF" #files type="file" accept='application/pdf' (change)="preview(file.files)" />
                 </ng-container>
                 <ng-container *ngSwitchCase="'addClass'">
@@ -291,7 +294,7 @@
                 <label class="label-style">Due date</label>
                 <div class="form-group course-type end-date">
                     <input type="date" class="form-control date" id="end-date" placeholder="end date">
-                 </div>
+                </div>
             </div>
             <div class="margin-10 top">
                 <label class="form-check-label label-style" for="defaultCheck1">
@@ -305,9 +308,22 @@
             <div class="margin-10 top bottom">
                 <label class="label-style">Publish</label>
                 <div class="publish">
-                    <div><label class="text-color">Status: </label> <label class="margin-10 left right">Draft</label> <a
+                    <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+                                <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z"/>
+                              </svg>
+                        <label class="text-color margin-5 left">Status: </label> <label class="margin-10 left right">Draft</label> <a
                             href="">Edit</a></div>
-                    <div><label class="text-color">Last update: </label> <label
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-clock" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z" />
+                            <path fill-rule="evenodd"
+                                d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                        <label class="text-color margin-5 left">Last update: </label> <label
                             class="margin-10 left right">09/14/2020</label>
                     </div>
                     <hr>
