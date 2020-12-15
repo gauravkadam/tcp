@@ -53,6 +53,7 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
   public addText: boolean;
   public isTaskPanelOpen: boolean;
   public isViewTask: boolean;
+  public addTextArray = [];
   
   preview(files) {
     if (files.length === 0)
@@ -113,6 +114,9 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
 
   uploadText() {
     this.addText = true;
+    if(this.addTextArray.length <=5){
+      this.addTextArray.push('');
+    }
   }
 
   ngAfterViewChecked() {
@@ -197,6 +201,10 @@ export class AddTaskComponent implements OnInit, AfterViewChecked {
 
   removeImg(i){
     this.imgURL.splice(i,1);
+  }
+
+  removeTextEditor(i){
+    this.addTextArray.splice(i,1);
   }
 
 }
